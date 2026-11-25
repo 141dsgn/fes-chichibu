@@ -1,0 +1,355 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+  background-color: #96D07A;
+}
+/* ーーーーーーーーーー
+     mapページ
+ーーーーーーーーーー */
+
+#wrapper{
+  width:100%;
+  margin: 0 auto;
+  background-color: #96D07A;
+}
+/* タイトル */
+.areamap_img, .areamap_title, .access_title{
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* エリアマップ */
+.areamap_box{
+  min-height: 500px; 
+  background-image: url(../img/area_map_haikei.png);	/* ← 背景の座布団のみをパス指定 */
+  background-repeat: no-repeat;
+  background-size: cover;      /* ← 画像サイズそのまま */
+  width: 1285px; 		/* ← 画像サイズ よこ幅 実寸 */
+  height: 1314px;		/* ← 画像サイズ たて幅 実寸 */
+  background-position: center center; /* 中央に配置 */
+  margin: 0 auto;
+  margin-top: 185px;
+  margin-bottom: 80px;
+}
+.areamap_img{
+  margin: 0 auto;
+}
+.areamap_title{
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+.areamap_text{
+  margin: 0 auto 40px auto;
+  text-align: center;
+  color: #273340;
+}
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+/* アクセスマップ */
+
+.access_box{
+  background-color: #479663;
+  background-image: url(../img/access_haikei.png);  /* ← 背景の座布団のみをパス指定 */
+  background-repeat: no-repeat;
+  background-size: contain;      /* ← 画像サイズそのまま */
+  color: #273340;
+  min-height: 500px; 
+  background-position: center center; /* 中央に配置 */
+  margin: 0 auto;
+  width: 100%;
+}
+.access_inner_box{
+  width: 1236px; 		/* ← 画像サイズ よこ幅 実寸1236 × 1460 */
+  height: 1460px;		/* ← 画像サイズ たて幅 実寸 */
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: center;
+}
+.access_title{
+  margin-bottom: 82px;
+}
+.access_address{
+  text-align: center; /* ← 画像も中央寄せしたいならこれも */
+  margin-bottom: 80px;
+}
+.access_address h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.map2column{
+  display: flex;
+  justify-content: center;
+}
+.map_left{
+  padding-right: 100px;
+}
+
+.access_2colomntitle h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.access_googlmap{
+  margin-bottom: 30px;
+}
+
+
+/*  シャトルバス  */
+.shuttlebus_box{
+  color: #FFFDF6;
+  background-color: #B7D7A8;
+  background-image: url(../img/shuttlebus_haikei.png);  /* ← 背景の座布団のみをパス指定 */
+  background-repeat: no-repeat;
+  background-size: contain;      /* ← 画像サイズそのまま */
+  background-position: center center; /* 中央に配置 */
+
+  min-height: 500px; 
+  background-position: center center; /* 中央に配置 */
+  margin: 0 auto;
+  width: 100%;
+}
+.shuttlebus_inner_box{
+  width: 1138px; 		/* ← 画像サイズ よこ幅 実寸1308 × 1389 */
+  height: 1389px;		/* ← 画像サイズ たて幅 実寸 */
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 230px;
+}
+.shuttlebus_title h2{
+  text-align: center;
+  padding-bottom: 129px;
+}
+
+.shuttlebus_2column{
+  display: flex;
+  justify-content: center;
+}
+.shuttlebus_leftcolumn{
+  margin-right: 35px;
+  margin-bottom: 35px;
+}
+.akachan{
+  display: flex;
+  justify-content: center;
+}
+.akachan_img{
+  margin-right: 35px;
+}
+.akachan_text{
+  padding-top: 95px;
+}
+
+
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  background-color: #479663;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+}
+
+.c-footer .logotype{
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+}
+
+
+/*---------------------------------------------------
+-----------------------------------------------------
+ スマホ対応 
+ ----------------------------------------------------
+ ---------------------------------------------------*/
+
+img{max-width:100%;height:auto;}
+@media only screen and (max-width:500px){
+
+  .areamap_box,.access_box,.shuttlebus_box{
+    background-image: none;
+  }
+  #wrapper {
+    max-width: 100%;
+  }
+  .map_naminami{
+    display: none;
+  }
+
+  .areamap_box, 
+  .access_box, 
+  .shuttlebus_box ,.access_inner_box,.shuttlebus_inner_box{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .areamap_box{
+    height: 600px;
+    margin: 0 auto;
+  }
+
+  /* 2カラムを縦並びに */
+  .map2column,
+  .shuttlebus_2column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* エリアマップ */
+
+  .areamap_box {
+    padding: 0;
+    min-height: 500px; /* スマホ時は縦に長めに */
+    background-size: cover;
+    background-position: center;
+  }
+  .areamap_title{
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .areamap_text{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+  .areamap_img{
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+
+  /* アクセスマップ */
+  .access_box{
+    background-color: #479663;
+    padding-bottom: 400px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    color: #FFFDF6;
+    background-size: cover;
+    background-position: center;
+  }
+  .access_title{
+    width: 100%;
+    text-align: center;
+  }
+  .map_left{
+    padding: 0;
+    margin-bottom: 100px;
+  }
+
+  /* シャトルバス */
+  .shuttlebus_box{
+    background-color: #479663;
+    color: #FFFDF6;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 450px;
+    background-size: cover;
+    background-position: center;
+  }
+  .shuttlebus_title{
+    width: 100%;
+    text-align: left;
+    padding-top: 400px;
+  }
+  .shuttlebus_title h2{
+    padding: 80px;
+  }
+  .shuttlebus_leftcolumn{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* 正方形に近い形 */
+    height: 0;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .shuttlebus_leftcolumn iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  .akachan{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 30px;
+  }
+  .akachan_img{
+    margin: 0 auto;
+  }
+  .akachan_text,h3{
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  background-color: #96D07A;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0 10px 0;
+}
+  
+
+
+}
+
+
+ /* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+
+/* 
+*{
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 2px;
+  }
+*/

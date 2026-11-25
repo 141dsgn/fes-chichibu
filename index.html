@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>秩父音の森フェスティバル 2025｜埼玉・秩父の家族で楽しむ音楽イベント</title>
+<meta name="description" content="埼玉・秩父の自然で楽しむ家族向け音楽フェス。子連れ歓迎の託児スペースやアレルギー表示、ピクニックエリアなど安心の取り組みも充実。2025年の開催情報、出演アーティスト、チケット・アクセスはこちら。">
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/top.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+
+// 動く目玉
+  $(document).on('mousemove', function (e) {
+    $('.eye').each(function () {
+        let $eye = $(this);
+        let $ball = $eye.find('.eye-ball');
+
+        // 白目の中心座標
+        let eyeOffset = $eye.offset();
+        let eyeCenterX = eyeOffset.left + $eye.width() / 2;
+        let eyeCenterY = eyeOffset.top + $eye.height() / 2;
+
+        // 中心からマウスへの距離
+        let dx = e.pageX - eyeCenterX;
+        let dy = e.pageY - eyeCenterY;
+
+        // 最大移動距離（白目内）
+        let maxMove = ($eye.width() - $ball.width()) / 2;
+
+        // 角度
+        let angle = Math.atan2(dy, dx);
+
+        // 移動距離
+        let moveX = Math.cos(angle) * maxMove;
+        let moveY = Math.sin(angle) * maxMove;
+
+        // 黒目位置更新
+        $ball.css({
+            left: moveX + $eye.width() / 2 - $ball.width() / 2,
+            top: moveY + $eye.height() / 2 - $ball.height() / 2
+        });
+    });
+});
+
+$(function(){
+  const $cta = $('#ticket-mon');
+  const $spacer = $('#ticket-mon-spacer');
+  const $trigger = $('#ticket-mon-trigger');        // ★ 追加
+  let triggerTop = $trigger.offset().top;  
+  const ctaHeight = $cta.outerHeight();
+  let isFixed = false;
+
+  $(window).on('scroll', function() {
+    const scrollTop = $(window).scrollTop();
+
+    if (scrollTop >= triggerTop && !isFixed) {
+      $cta.addClass('is-fixed');
+      $spacer.css('height', ctaHeight);
+      isFixed = true;
+
+      $cta.addClass('is-shaking');
+      setTimeout(() => {
+        $cta.removeClass('is-shaking');
+      }, 400);
+
+    } else if (scrollTop < triggerTop && isFixed) {
+      $cta.removeClass('is-fixed is-shaking');
+      $spacer.css('height', 0);
+      isFixed = false;
+    }
+  });
+});
+
+
+// 500px以下ヘッダー
+
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+
+
+
+</script>
+</head>
+ 
+
+<body>
+  
+<!-- ヘッダー -->
+<header class="header">
+  <!-- 左上ロゴ -->
+  <a href="../index.html" class="header__logo">
+    <img src="img/c_header_logo.png" alt="フェスのロゴマーク">
+  </a>
+
+  <!-- ハンバーガー -->
+<div class="header__toggle js-header_toggle" id="menuToggle">
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+  </div>
+
+  <!-- ナビメニュー -->
+  <nav class="header__navi">
+    <ul>
+      <li><a href="news/index.html">news</a></li>
+      <li><a href="content/index.html">content</a></li>
+      <li><a href="artist/index.html">music</a></li>
+      <li><a href="map/index.html">map</a></li>
+      <li><a href="notice/index.html">notice</a></li>
+      <li><a href="ticket/index.html">ticket</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 全体 -->
+<div class="p-top">
+
+  <!-- ヘッダー -->
+  <header class="header--top">
+    <nav class="nav--top">
+      <ul class="nav-list--top">
+        <li>
+          <a href="news/index.html" class="nav-link">
+            <img src="img/p-top-header-news-mon--x2.png" alt="" class="monster--mini"> 
+            <p class="header_navi-text--top">news</p>
+          </a>
+        </li>
+        
+        <li><a href="content/index.html" class="nav-link">
+            <img src="img/p-top-header-content-mon--x2.png" alt="" class="monster-mini"> 
+            <p class="header_navi-text--top">content</p>
+            </a>
+        </li>
+        <li><a href="artist/index.html" class="nav-link">
+            <img src="img/p-top-header-music-mon--x2.png" alt="" class="monster-mini"> 
+            <p class="header_navi-text--top">music</p>
+            </a>
+        </li>
+        <li><a href="map/index.html" class="nav-link">
+            <img src="img/p-top-header-map-mon--x2.png" alt="" class="monster-mini"> 
+            <p class="header_navi-text--top">map</p>
+            </a>
+        </li>
+        <li><a href="notice/index.html" class="nav-link">
+            <img src="img/p-top-header-notice-mon--x2.png" alt="" class="monster-mini"> 
+            <p class="header_navi-text--top">notice</p>
+            </a>
+        </li>
+<li>
+  <a href="ticket/index.html" class="monster-ticket--mini">
+    <span class="monster-ticket--label">ticket</span>
+  </a>
+</li>
+      </ul>
+    </nav>
+  </header>
+
+
+<!-- メインビジュアル部分 -->
+<section class="hero">
+  <!-- ヒーローイメージ -->
+  <div class="hero_image">
+    <div class="container">
+
+      <div class="slides">
+        <div class="image src1">    
+          <div class="eye-wrapper">
+            <div class="eye eye-white left">
+              <div class="eye-ball"></div>
+            </div>
+            <div class="eye eye-white right">
+              <div class="eye-ball"></div>
+            </div>
+          </div>
+        </div>
+        <div class="image src2"></div>
+        <div class="image src3"></div>
+        <div class="image src4"></div>
+      </div>
+    </div>
+    </div>
+    <!-- ヒーローコンテンツ -->
+    <div class="hero_content">
+        <div class="logo">
+          <div class="eye-wrapper logo-eyes">
+            <div class="eye eye-white left">
+              <div class="eye-ball"></div>
+            </div>
+            <div class="eye eye-white right">
+              <div class="eye-ball"></div>
+            </div>
+          </div>
+            <div class="mark"><img src="img/top-hc-logo.png" alt="フェスロゴ"></div>
+          </div>
+
+        <div class="news">
+          <div class="title">
+            <img src="img/news64white.png" alt="">
+          </div>
+            <div class="item-container">
+              <div class="news-item">
+                <!-- 左カラム  -->
+                  <div>
+                    <img src="img/news-samune1.png" alt="" width="159" height="103">
+                  </div>
+                <!-- 右カラム -->
+                  <div>
+                    <a href=""><p>2025.09.01<br>タイムテーブル発表</P></a>
+                  </div>   
+              </div>
+              <div class="news-item">
+                  <!-- 左カラム  -->
+                    <div>
+                      <img src="img/news-samune2.png" alt="" width="159" height="103">
+                    </div> 
+                  <!-- 右カラム -->
+                    <div>
+                      <a href=""><p>2025.08.20<br>第三弾 出演者発表！</P></a>
+                    </div>
+              </div>
+              <div class="news-item">
+                  <!-- 左カラム  -->
+                    <div>
+                      <img src="img/news-samune3.png" alt="" width="159" height="103">
+                    </div>
+                  <!-- 右カラム -->
+                    <div>
+                      <a href="#" class=""><p>2025.08.20<br>グッズ発表！</p></a>
+                    </div>
+              </div>
+            </div>
+            <a href="news/index.html" class="c-btn">詳細を見る</a>
+          </div>
+      </div>
+</section>
+
+<!-- フェスの様子写真 -->
+<div class="full-width fesimage01" id="fes-photo">
+  <img src="img/top-fesimage01.png" alt="">
+</div>
+
+<!-- チケモン -->
+<div class="fixed-cta" id="ticket-mon">
+  <a href="ticket/index.html">ticket</a>
+</div>
+<div id="ticket-mon-spacer" style="height: 0;"></div>
+
+<div id="ticket-mon-trigger"></div>
+
+  <!-- アバウト -->
+  <section class="about" id="top-about">
+    <div class="title">
+        <img src="img/about64white.png" alt="">
+    </div>
+    <div class="box-text--h3">
+      <h3 class="lead">森の音フェスティバルは、埼玉・秩父の自然あふれる森の中で開催される、家族みんなで楽しめる音楽フェスです。</h2>
+    </div>
+    <div class="box-text--p">
+    <p class="text">子どもから大人まで、誰もが自由に楽しめる音楽ライブや自然体験が盛りだくさん。<br>埼玉で家族と過ごす週末のお出かけとして、<br>音楽フェスが初めてのご家族にもぴったりのイベントです。<br>木漏れ日の中、音楽のリズムと子どもたちの笑い声が響く森では、<br>自然素材を使ったワークショップや、親子でくつろげるピクニックエリアも<br>ご用意しています。<br>都会では体験できない、自然の音、森の空気、家族のふれあいを、<br>音楽フェスならではのスタイルで味わえます。<br>埼玉の森で出会う、音楽と家族の特別な時間。<br>森の音フェスティバルは、家族の思い出になるやさしい音楽フェスです。</p>
+    </div>
+  </section>
+
+  <!-- ラインナップ -->
+<section class="lineup">
+  <img src="img/p-top-lineup-monster-mini01.png" alt="" class="monster-mini01"><img src="img/p-top-lineup-monster-mini02.png" alt="" class="monster-mini02"><img src="img/p-top-lineup-monster-mini03.png" alt="" class="monster-mini03"><img src="img/p-top-lineup-monster-mini04.png" alt="" class="monster-mini04">
+  <div class="title">
+    <img src="img/lineup64white.png" alt="">
+  </div>
+  <h2 class="lead">第3弾最終アーティスト発表！<br>2025秩父森の音フェスティバルのアーティストが勢揃いしました。<br>家族で楽しめるラインナップです。</h2>
+  <div class="artist">
+    
+    <div class="artist-list line01 sp-column">
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist01.png" alt="The Blue Horizon">
+        </div>
+        <h3 class="name">The Blue Horizon</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist02.png" alt="安藤ももか">
+        </div>
+        <h3 class="name">安藤ももか</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist03.png" alt="RAKOTA">
+        </div>
+        <h3 class="name">RAKOTA</h3>
+      </div>
+
+    </div>  
+    <div class="artist-list line02 sp-column">
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist04.png" alt="PICOPICOぱぺっと">
+        </div>
+        <h3 class="name">PICOPICOぱぺっと</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist05.png" alt="the folk society">
+        </div>
+        <h3 class="name">the folk society</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist06.png" alt="HÖNÖKA">
+        </div>
+        <h3 class="name">HÖNÖKA</h3>
+      </div>
+
+    </div>   
+
+    <div class="artist-list line03 sp-column">
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist07.png" alt="ハナレヤマ">
+        </div>
+        <h3 class="name">ハナレヤマ</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist08.png" alt="さのなこ">
+        </div>
+        <h3 class="name">さのなこ</h3>
+      </div>
+      
+      <div class="item">
+        <div class="photo">
+          <img src="img/artist09.png" alt="石井隆一郎">
+        </div>
+        <h3 class="name">石井隆一郎</h3>
+      </div>
+
+    </div> 
+
+  </div> 
+  <div>
+    <a href="artist/index.html" class="c-btn">詳細を見る</a>
+  </div>
+</section>
+
+
+
+  <!-- 安心のための取り組み -->
+  <section class="foryou full-width">
+  <div class="title">
+    <img src="img/foryou64white.png" alt="">
+  </div>
+  <h2 class="lead">家族みんなで<br>のびのびできるための<br>取り組み</h2>
+  <h3 class="lead-sub">お子さんがいる家族でのおでかけは、いろんな制約や負担があって大変。少しでもみなさんの心が軽くなるために、どんな工夫ができるかをとても大切に考えています。</h3>
+  <div class="list">
+      
+      <div class="item">
+        <div class="image-text-wrapper">
+          <img src="img/top-foryou-item01.png" alt="">
+          <p class="q q-1">わんぱくで<br>スタッフに迷惑をかけないか心配</p>
+          <p class="a a-1">ご安心ください。保育士や、<br>テーマパーク経験者をはじめ、<br>親子で楽しむフェスを応援するスタッフが出迎えます。</p>
+        </div>
+      </div>
+
+
+      <div class="item">
+        <div class="image-text-wrapper">
+          <img src="img/top-foryou-item02.png" alt="">
+          <p class="q q-2">ずっと子どもの<br>面倒を見て、<br>親が楽しめない...</p>
+          <p class="a a-2">保育士資格を持ったスタッフ<br>在中の託児スペースをご用意。<br>ライブ中やリフレッシュ等に<br>ご利用ください。</p>
+        </div>
+      </div>
+            
+      <div class="item">
+        <div class="image-text-wrapper">
+          <img src="img/top-foryou-item03.png" alt="">
+          <p class="q q-3">子どもにアレルギーが多く、食べられるものがあるか不安...</p>
+          <p class="a a-3">すべての出店フード店舗で<br>特定原材料(8品目)の<br>表示を徹底します。<br>安心して親子で楽しめます。</p>
+        </div>
+      </div>
+
+  </div>
+  </section>
+
+
+  <!-- チケット概要 -->
+  <section class="ticket">
+    <div class="monster"><img src="img/top-ticket-mon-fly.png" alt=""></div>
+  <div class="title">
+    <img src="img/ticket 64white.png" alt="">
+  </div>
+  <div class="prices-wrapper">
+    <div class="prices container01">
+
+      <div class="box">
+        <div class="price price--general">
+          <h3>一般</h3>
+          <h2>¥9,900</h2>
+        </div>
+        <div>
+          <p>※全て自由席 ※料金は税込 ※中学生以下チケット不要※整理番号付き<br>※整理番号順のご入場となりますが、開場時間を過ぎますと番号は無効となります。</p>
+        </div>
+      </div>
+
+      <div class="box">  
+        <div class="price price--saitama">
+          <h3>埼玉券</h3>
+          <h2>¥9,000</h2>
+        </div>  
+          <p>埼玉券は埼玉に住んでいてよかったと思ってもらえるようにお得にしております。<br>県内の販売店のみでの販売になります。</p>
+      </div>
+
+    </div>
+    
+      <div class="box box--parking">
+        <div class="price price--parking">
+          <h3>駐車券</h3>
+          <h2>¥3,000</h2>
+        </div>
+        <div>
+          <p>お車でお越しの方は、駐車場利用にあたりこちらのチケットが必要となります。<br>当日お支払いの方は現地でのお支払いになります。<br>枚数限定で駐車場付きチケットの販売もございます。</p>
+        </div>
+      </div>
+</div>
+    <a href="ticket/index.html" class="c-btn">詳細を見る</a>
+  
+  </section>
+
+
+  <!-- フェスの様子写真 -->
+<div class="full-width fesimage02">
+  <img src="img/top-fesimage03.png" alt="">
+</div>
+
+
+  <!-- アクセス概要 -->
+  <section class="access full-width">
+    <div class="title">
+      <img src="img/access64white.png" alt="">
+    </div>
+    <div class="container--2column">
+      <div class="info">
+        <h2>会場までのアクセス</h2>
+        <h3 class="address">会場：日向山イベント広場<br>埼玉県秩父郡横瀬町芦ケ久保999-99</h3>
+        <h3>■お車でお越しの場合</h3>
+        <p>新潟線/関越自動車道<br>鶴ヶ島ICから約1時間10分（44.4km）</p>
+        <h3>■電車でお越しの場合</h3>
+        <p>池袋駅からー特急ラビューちちぶ（有料特急西武秩父行）<br>約1時間15分ー横瀬駅下車<br>横瀬駅よりシャトルバス　7㎞</p>
+              <a href="/access" class="c-btn">詳しく見る</a>
+      </div>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51667.52383190105!2d139.12785471650398!3d35.96604062698783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601eccea24e70a69%3A0x4e651d716b60d517!2z44CSMzY4LTAwNzEg5Z-8546J55yM56ep54i26YOh5qiq54Cs55S66Iqm44Kx5LmF5L-d!5e0!3m2!1sja!2sjp!4v1754443043155!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    
+    </div>
+
+  </section>
+<!-- スポンサーの上波 -->
+      <div class="nami-wrapper full-width"><img src="img/p-top-sponsors-nami01.png" alt=""></div>
+
+  <!-- 主催・協賛 -->
+  <section class="sponsors full-width">
+  <div class="title">
+      <img src="img/sponsor64white.png" alt="">
+    </div>
+    <div class="list">
+      <div class="container--3column">
+        <div class="item">
+          <a href="http://yuruobake.stars.ne.jp/">
+          <img src="img/sponsor01.png" alt="主催名1">
+          </a>
+        </div>
+        <div class="item">
+          <a href="http://dragonfire.stars.ne.jp/">
+          <img src="img/sponsor02.png" alt="主催名1">
+          </a>
+        </div>
+        <div class="item">
+          <a href="">
+          <img src="img/sponsor03.png" alt="主催名1">
+          </a>
+        </div>
+      </div>
+      <div class="container--3column">
+        <div class="item">
+          <a href="http://ss898291.stars.ne.jp/">
+          <img src="img/sponsor04.png" alt="主催名1">
+          </a>
+        </div>
+        <div class="item">
+          <a href="http://ss898291.stars.ne.jp/">
+          <img src="img/sponsor05.png" alt="主催名1">
+          </a>
+        </div>
+        <div class="item">
+          <a href="">
+          <img src="img/sponsor06.png" alt="主催名1">
+          </a>
+        </div>
+      </div>
+      <div class="container--3column">
+        <div class="item">
+          <a href="">
+          <img src="img/sponsor07.png" alt="主催名1">
+          </a>
+        </div>
+        <div class="item">
+          <a href="">
+          <img src="img/sponsor08.png" alt="主催名1">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- スポンサーの下波 -->
+    <div class="nami-wrapper full-width"><img src="img/p-top-sponsors-nami02.png" alt=""></div>
+
+</div>
+
+
+
+
+</div>
+  <!-- フッター -->
+  <footer class="c-footer footer--darkgreen">
+    <div class="logomark"><a href="index.html"><img src="img/c_header_logo.png" alt="音という漢字に目玉が二つついているロゴマーク"></a></div>
+    <div class="logotype"><img src="img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ　秩父音の森フェスティバル"></div>
+    <div class="sns">
+      <a href="#" class="icon">
+        <img src="img/c-footer_icon_x.png" alt="エックスのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+      </a>
+    </div>
+    <div class="privacy"><a href="privacy/index.html">プライバシーポリシー</a></div>
+    <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+  </footer>
+</body>
+
+</html>

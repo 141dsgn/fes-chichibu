@@ -1,0 +1,437 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+ 
+/* ーーーーーーーーーー
+     artistページ
+ーーーーーーーーーー */
+
+ 
+/* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+
+/* 
+*{
+outline: 1px solid red;
+margin: 5px;
+  } 
+ */
+
+/* ページ全体 */
+.p-artist{
+    background-color: #B7D7A8;
+}
+
+
+/* セクション全体 */
+
+.p-artist-main{
+    align-items: center;
+    padding: 0 80px;
+}
+
+
+
+/* セクション：ラインナップ */
+
+
+.lineup{
+    background-image: url(../img/p-artist-lineup-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center; /* 常に中央に表示 */
+    background-size: contain;             /* 幅・高さとも画面いっぱいに広げる */
+
+    width: 100%;
+
+    margin: 130px 0;
+    padding: 80px 0 ;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.lineup .title{
+    margin-bottom: 80px;
+}
+
+.artist{
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.artist-list{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.artist .item .name {
+    text-align: center;
+}
+
+.artist .line01, .line02{
+    margin-bottom: 120px;
+}
+
+
+.p-artist .lineup .monster-mini01{
+    position: absolute;
+    top: 13%;
+    left: 60%;
+}
+
+.p-artist .lineup .monster-mini02{
+  position: absolute;
+  top: 40%;
+  left: 5%;
+}
+
+.p-artist .lineup .monster-mini03{
+  position: absolute;
+  top: 70%;
+  left: 80%;
+}
+
+.p-artist .lineup .monster-mini04{
+  position: absolute;
+  top: 98%;
+  left: 42%;
+}
+
+.lineup .title{
+  padding-bottom: 40px;
+}
+
+.lineup .lead{
+  padding-bottom: 80px;
+}
+
+.artist{
+  margin-bottom: 120px;
+}
+
+.artist-list{
+  display: flex;
+  gap: 30px;
+}
+
+.artist .item .name {
+  text-align: center;
+}
+
+.artist .line01, .line02{
+  margin-bottom: 120px;
+}
+
+
+
+
+/* セクション：タイテ */
+
+.timetable{
+
+    text-align: center;
+}
+
+.timetable .bgcontainer{
+    position: relative;
+}
+
+.timetable .bgcontainer img:first-child {
+    width: 100%;
+    height: auto;
+}
+
+.timetable .tt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    max-width: min(40%);
+}
+
+
+
+/*モーダルを開くボタン*/
+.modal-open{
+  cursor: pointer;
+}
+
+
+/* ーー モーダル中はヘッダー非表示＆背面スクロール禁止 ーー */
+body.modal-opened { overflow: hidden; }
+body.modal-opened .header { opacity: 0; pointer-events: none; }
+
+/* ーー オーバーレイ ーー */
+.modal-container{
+  position: fixed; 
+  inset: 0;
+  
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  
+  background: rgba(0,0,0,0.5);
+  padding: 40px 20px;
+  opacity: 0; 
+  visibility: hidden; 
+  transition: .3s;
+
+  z-index: 4000;
+}
+.modal-container.active{ opacity: 1; visibility: visible; }
+
+/* ーー モーダル本体 ーー */
+.modal-body{
+  position: relative;
+  width: 1400px; height: 830px;
+  max-width: 95vw; max-height: 90vh;
+  display: grid;
+  overflow: hidden;
+  background: #FFFDF6;
+  border-radius: 16px;
+}
+
+/* モーダル中身を左右2カラムに */
+.modal-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 左右同幅 */
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* テキストは縦中央寄せに */
+.modal-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1.6;
+
+  padding: 40px;
+}
+
+/* 画像は等比縮小で半分に */
+.modal-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-image img{
+  width: calc(1474px / 2); /* 元画像サイズの半分 */
+  height: calc(982px / 2);
+  max-width: 100%; /* 画面が狭いときは縮む */
+  height: auto;
+}
+
+
+/* ーー 閉じるボタン：ハンバーガーと同じ雰囲気の円＋X ーー */
+.modal-close{
+  position: absolute; top: 12px; right: 12px;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #F7943E;
+  border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* X の2本線（ハンバーガーのライン風） */
+.modal-close-line{
+  position: absolute;
+  width: 26px; height: 2px;
+  background: #333;
+  transform-origin: center;
+}
+.modal-close-line:first-child{ transform: rotate(45deg); }
+.modal-close-line:last-child{  transform: rotate(-45deg); }
+
+/* ーー 既存の×文字ボタン見た目を打ち消し（もし残っていた場合） ーー */
+.modal-close { font-size: 0; color: transparent; background-color: #F7943E; }
+
+.profile{
+  margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .p-artist-main {
+        padding: 0 0;
+    }
+
+    .p-artist  .lineup { 
+        padding: 0 10px 130px 10px; 
+        margin-bottom: 280px;
+
+        background-image:none;
+
+    }
+      /* すべての.itemは同じ幅に固定（お好みで90〜100%） */
+  .p-artist .artist-list .item {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  .p-artist .artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+    .p-artist .artist .item .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .p-artist  .artist .item .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* 左寄せグループ */
+  .p-artist .line01 .item:nth-child(1),
+  .p-artist .line01 .item:nth-child(3),
+  .p-artist .line02 .item:nth-child(2),
+  .p-artist .line03 .item:nth-child(1),
+  .p-artist .line03 .item:nth-child(3) {
+    align-self: flex-start;
+    text-align: left;
+    /* margin-right: auto;  ←削除 */
+  }
+
+  /* 右寄せグループ */
+  .p-artist .line01 .item:nth-child(2),
+  .p-artist .line02 .item:nth-child(1),
+  .p-artist .line02 .item:nth-child(3),
+  .p-artist .line03 .item:nth-child(2) {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .p-artist .artist-list {
+    margin-bottom: 0;
+    width: 95vw;
+  } 
+
+  
+  .p-artist .lineup .monster-mini01{
+    position: absolute;
+    top: 22%;
+    left: 5%;
+}
+
+  .p-artist .lineup .monster-mini02{
+    position: absolute;
+    top: 53%;
+    left: 75%;
+}
+
+  .p-artist .lineup .monster-mini03{
+    position: absolute;
+    top: 72%;
+    left: 4%;
+}
+
+  .p-artist .lineup .monster-mini04{
+    position: absolute;
+    top: 96%;
+    left: 30%;
+}
+
+
+
+
+ .timetable .bgcontainer .tt {
+    max-width: min(80%);
+}
+
+ .timetable .bgcontainer .bg {
+    display: none;
+}
+
+  /* 1) timetable側の背景・固定高さを消す（競合の元） */
+  .timetable{
+    background: none !important;
+    height: auto !important;
+    padding: 0;
+  }
+
+  .timetable .title{
+    margin-bottom: 120px;
+  }
+
+  /* 2) 高さの基準は bgcontainer に一本化（背景＆アスペクト比） */
+  .timetable .bgcontainer{
+    position: relative;
+    width: 100%;
+    background: url(../img/p-artist-sp-tt-bg.png) center center / cover no-repeat;
+    aspect-ratio: 750 / 1683; /* 750 × 1683 幅=1045px, 高さ=1170px の場合 */
+    overflow: hidden; 
+  }
+  .timetable .bgcontainer img.bg{ display: none; }
+
+  .timetable .tt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 88%;
+    height: auto;
+  }
+
+  .modal-body{
+    max-width: 96vw;
+    max-height: 90vh;
+    overflow: auto;           /* ← ここをautoに */
+  }
+  .modal-close{ top: 8px; right: 8px; width: 44px; height: 44px; }
+  .modal-close-line{ width: 22px; }
+
+
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    height: auto;             /* ← 100%を解除 */
+    overflow: visible;        /* ← 隠さない */
+    padding: 40px;            /* 余白少しだけ軽く（お好みで） */
+  }
+
+  /* 並び順：上テキスト、下画像 */
+  .modal-text{ 
+    order: 2;
+    width: 110%;
+  }
+  .modal-image{ order: 1; margin-top: 12px; }
+  
+  .modal-image img{
+    width: 100%;
+    height: auto;
+    max-width: none;          /* calc指定の影響を消す保険 */
+  }
+
+
+
+
+
+  }
+
+
+
+

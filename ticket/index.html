@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>ticket</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/ticket.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+</script>
+
+</head>
+
+<body class="p-ticket-wrapper">
+
+
+<!-- ヘッダー -->
+<header class="header">
+  <!-- 左上ロゴ -->
+  <a href="../index.html" class="header__logo">
+    <img src="../img/c_header_logo.png" alt="フェスのロゴマーク">
+  </a>
+
+  <!-- ハンバーガー -->
+<div class="header__toggle js-header_toggle" id="menuToggle">
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+  </div>
+
+  <!-- ナビメニュー -->
+  <nav class="header__navi">
+    <ul>
+      <li><a href="../news/index.html">news</a></li>
+      <li><a href="../content/index.html">content</a></li>
+      <li><a href="../artist/index.html">music</a></li>
+      <li><a href="../map/index.html">map</a></li>
+      <li><a href="../notice/index.html">notice</a></li>
+      <li><a href="index.html">ticket</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<main class="p-ticket">
+  
+  <section class="ticket-single">
+        <div class="monster"><img src="../img/top-ticket-mon-fly.png" alt=""></div>
+
+    <div class="container-title">
+    <img class="title" src="../img/ticket64black.png" alt="">
+    <img class="icon" src="../img/p-ticket-icon-ticket..png" alt="">
+    </div>
+
+    <div class="container-ticketinfo">
+      <div class="ticketinfo ticketinfo01">
+        <h3 class="ticketversion">おとな</h3>
+        <div class="box">
+          <div class="price price--general">
+            <h3>一般</h3>
+            <h2>¥9,900</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="price price--saitama">
+            <h3>埼玉券</h3>
+            <h2>¥9,000</h2>
+          </div>
+        </div>
+        <div>
+          <p>埼玉券は埼玉県に住んでいてよかったと思ってもらえるようにお得な価格にしております。<br>埼玉券は県内の販売店での販売になります。</p>
+        </div>
+      </div>
+
+      <div class="ticketinfo ticketinfo02">
+        <h3 class="ticketversion">こども</h3>
+        <div class="box">
+          <div class="price price--child">
+            <h3>中学生以下</h3>
+            <h2>無料</h2>
+          </div>
+        </div>
+        <div class="guide">
+          <p>※全て自由席 ※料金は税込 ※中学生以下チケット不要<br>※整理番号付き当日、学生証をご提示ください。※整理番号順のご入場となりますが、開場時間を過ぎますと番号は無効となります。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-reserve">
+      <a href="#" class="c-btn btn--reserve eplus">
+        <img src="../img/p-ticket-icon-ep.png" alt="" class="logo-eplus">
+        <h3>イープラス</h3>
+      </a>
+      <a href="#" class="c-btn btn--reserve pia">
+        <img src="../img/p-ticket-icon-pia.png" alt="" class="logo-pia">
+        <h3>チケットぴあ</h3>
+      </a>
+    </div>
+
+  </section>
+
+
+  
+  <section class="ticket-parking">
+    <img class="title" src="../img/parking64black.png" alt="">
+    <img class="icon" src="../img/p-ticket-icon-car.png" alt="">
+    <div class="ticketinfo-parking">
+        <div class="box">
+          <div class="price price--general">
+            <h3>駐車券</h3>
+            <h2>¥3,000</h2>
+          </div>
+        </div>
+        <div>
+          <p>お車でお越しの方は、駐車場利用にあたりこちらのチケットが必要となります。<br>当日お支払いの方は現地でのお支払いになります。</p>
+        </div>
+      </div>
+  </section>
+
+
+<!-- なみなみ01 -->
+  <img src="../img/p-ticket-nami01.png" alt="" class="nami">
+
+
+  <!-- セットチケット -->
+  <section class="ticket-set">
+
+    <img class="title" src="../img/parkingsetticket64black.png" alt="">
+      
+    <h3 class="lead">お得な駐車場付きチケットを<br>数量限定でご用意しています</h3>
+      
+    <div class="box">
+      <div class="price price--set">
+        <h3>1日</h3>
+        <h2>￥12,500</h2>
+      </div>
+    </div>
+      
+    <div class="sugestion">
+      <img class="icon-baby" src="../img/p-ticket-ticket-set-icon-baby.png" alt="">
+      <p class="sugestioon-lead">会場近くの臨時駐車場なのでお子さん連れで<br>お荷物が多くても便利にゆったり使っていただけます！</p>
+    </div>
+
+    <div class="container-reserve">
+      <a href="" class="c-btn btn--reserve eplus">
+        <img src="../img/p-ticket-icon-ep.png" alt="" class="logo-eplus">
+        <h3>イープラス</h3>
+      </a>
+      <a href="" class="c-btn btn--reserve pia">
+        <img src="../img/p-ticket-icon-pia.png" alt="" class="logo-pia">
+        <h3>チケットぴあ</h3>
+      </a>
+    </div>
+
+  </section>
+
+
+
+<!-- なみなみ02 -->
+  <img src="../img/p-ticket-nami02.png" alt="" class="nami">
+
+</main>
+
+
+
+
+
+  <!-- フッター -->
+  <footer class="c-footer">
+    <div class="logomark"><img src="../img/c_header_logo.png" alt="音という漢字に目玉が二つついているロゴマーク"></div>
+    <div class="logotype"><img src="../img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ　秩父音の森フェスティバル"></div>
+    <div class="sns">
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_x.png" alt="エックスのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+      </a>
+    </div>
+    <div class="privacy"><a href="../privacy/index.html">プライバシーポリシー</a></div>
+    <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+  </footer>
+
+
+
+
+
+
+
+</div>
+</body>
+
+</html>

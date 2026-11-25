@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    line-height:170%;
+    color:#FFFDF6;
+    background-color: #B7D7A8;
+}
+ 
+/* ーーーーーーーーーー
+プライバシーポリシーページ
+ーーーーーーーーーー */
+
+#wrapper{
+    max-width: 100%;
+}
+.title{
+    max-width: 100%;
+    margin-bottom: 80px;
+    text-align: center;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.privacy_mon{
+  display: none;
+}
+.privacypolicy1{
+    background-image: url(../img/privacypolicy_haikei.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: center; /* 中央に配置 */
+    margin: 0 auto;
+    
+    padding-top: 185px;
+    margin-top: 185px;
+    margin-bottom: 100px;
+}
+.privacypolicy_innerbox{
+    width: 684px;
+    margin: 0 auto;
+    display: block;
+}
+.privacypolicy1 .p{
+    font-size: 20px;
+}
+.privacypolicy1 .h3{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 65px;
+}
+.privacypolicy1 .h4{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 65px;
+}
+.privacypolicy1 .p1{
+    margin-top: 100px;
+}
+.privacypolicy1,.elder{
+  padding-bottom: 100px;
+}
+
+/* なみなみ */
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  background-color: #479663;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+}
+
+.c-footer .logotype{
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+}
+
+
+/* レスポンシブ */
+img{max-width:100%;height:auto;}
+
+@media only screen and (max-width:500px){
+
+.privacypolicy1{
+background-image: none;
+max-width: 100%;
+}
+.title{
+  width: 100%;
+  text-align: center;
+  margin-top: 185px;
+  margin-bottom: -5px;
+}
+.privacy_mon{
+  display: block;
+  margin-bottom: -77px;
+}
+.privacypolicy1 {
+    width: 100%;            /* 画面幅の90%に */
+    margin: 0 auto;        /* 中央寄せ */
+    padding-top: 50px;     /* 余白を縮める */
+    padding-bottom: 100px;
+  }
+.privacypolicy1 .p {
+    margin: 0;             /* 左右の余白を消す */
+    font-size: 16px;       /* 読みやすく縮小 */
+    padding: 80px 30px 150px 30px;
+    background-color: #479663;
+    width: 100%;
+  }
+  .privacypolicy_innerbox{
+    width: 100%;
+  }
+  .privacypolicy1,.elder{
+  padding-bottom: 0;
+}
+  .news_naminami{
+    display: none;
+  }
+.c-footer{
+  background-color: #B7D7A8;
+}
+  
+
+}
+/* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+
+/* 
+*{
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 2px;
+  } */

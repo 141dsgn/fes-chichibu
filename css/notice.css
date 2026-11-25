@@ -1,0 +1,449 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+  background-color: #B7D7A8;
+}
+ 
+/* ーーーーーーーーーー
+     noticeページ
+ーーーーーーーーーー */
+
+#wrapper{
+    width:100%;
+}
+.p-notice{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.notice_title{
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+
+
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 80px;
+    margin-top: 185px;
+    margin-bottom: 80px;
+}
+
+.notice_text{
+  background-image: url(../img/notice_haikei.png);
+  background-repeat: no-repeat;
+  background-size: auto;      /* ← 画像サイズそのまま */
+  width: 1281px; 		/* ← 画像サイズ よこ幅 実寸1281 × 937 */
+  height: 937px;		/* ← 画像サイズ たて幅 実寸 */
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 150px; 
+}
+.notice_omoi{
+    width: 684px;
+    line-height: 200%;
+    color: #FFFDF6;
+    margin: 0 auto;
+}
+.notice_mon{
+    display: none;
+}
+
+/* よくある質問 */
+.faq{
+ width: 705px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 250px;
+}
+.faq_title{
+   width: 705px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-bottom: 50px;
+    color: #273340;
+}
+.p-contact,.c-btn{
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* お問い合わせ */
+.contact_title{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 185px;
+}
+.contact_text{
+    width: 736px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 73px;
+    color: #273340;
+}
+.form_box,.c-btn{
+    margin-top: 80px;
+}
+.notice_naminami{
+    margin-top: 150px;
+
+}
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  background-color: #479663;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+}
+
+.c-footer .logotype{
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+}
+
+
+
+
+
+
+
+/*---------------------------
+
+よくある質問アコーディオンメニュー
+
+----------------------------- */
+.qa-1 {
+    max-width: 700px;
+    margin-bottom: 7px;
+    border: 5px solid #96d07a;
+    border-radius: 50px;
+    margin-left: 30px;
+    background-color: #FFFDF6;
+}
+
+.qa-1 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: #273340;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qa-1 summary::before,
+.qa-1 p::before {
+    position: absolute;
+    left: 1em;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.qa-1 summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: -120px;
+    border-bottom: 3px solid #273340b3;
+    border-right: 3px solid #273340b3;
+    content: '';
+    transition: transform .5s;
+}
+
+.qa-1[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.qa-1 p {
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 3em 1.5em;
+    color: #333;
+    transition: transform .5s, opacity .5s;
+}
+
+.qa-1[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+.qa-1 p::before {
+    color: #ff8d8d;
+    line-height: 1.2;
+    content: "A";
+}
+
+
+
+
+/*----------------
+
+問い合わせフォーム
+
+------------------*/
+.form {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+@media screen and (max-width: 480px) {
+  .form {
+    margin-top: 40px;
+  }
+}
+.form-item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .form-item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+}
+.form-item:nth-child(5) {
+  border-bottom: 1px solid #FFFDF6;
+}
+.form-item-label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .form-item-label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.form-item-label.ismsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .form-item-label.ismsg {
+    margin-top: 0;
+  }
+}
+.form-item-label-required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #96D07A;
+  color: #FFFDF6;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .form-item-label-required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+.form-item-input {
+  border: 1px solid #96D07A;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .form-item-input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.form-item-textarea {
+  border: 1px solid #96D07A;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .form-item-textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+
+
+
+/*---------------------------------------------------
+-----------------------------------------------------
+ スマホ対応 
+----------------------------------------------------
+---------------------------------------------------*/
+
+
+img{max-width:100%;height:auto;}
+
+@media only screen and (max-width:500px){
+
+  #wrapper{
+  max-width: 100%;
+  background-color: #B7D7A8;
+}
+.notice_box{
+  width: 100%;
+  padding: 0;
+}
+.notice_title{
+  max-width: 100%;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  height: auto;  /* はみ出し防止 */
+  display: inline-block;
+}
+.notice_text{
+  background-image: none;
+  width: 100%;       /* 画面幅に合わせる */
+  max-width: 100%;   /* はみ出し防止 */
+  height: auto;      /* 高さは中身に合わせる */
+  box-sizing: border-box; /* padding込みで調整 */
+}
+.notice_omoi{
+  background-color: #479663;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0;            /* マージンはなくす */
+  line-height: 2;       /* 200%のまま */
+  color: #FFFDF6;
+  padding: 80px 30px 0 30px;     /* お好みで内側余白 */
+}
+.notice_mon{
+  width: 100%;
+  background-color: #479663;
+  display: block;
+  margin: 0;
+
+  height: auto;
+  max-width: 100vw; /* ビューポート幅を超えない */
+  box-sizing: border-box;
+}
+.faq_title{
+  max-width: 100%;
+  margin-top: 100px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-top: 1px;
+}
+.faq {
+    font-size: 14px;
+    padding-top: 40px;
+    max-width: 100%;
+    padding-right: 20px;
+  }
+.contact_title{
+  max-width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.contact_text{
+  width: 100%;           /* 画面幅の90%にして余白をつくる */
+  max-width: 500px;     /* 最大幅は元の684pxに */
+  height: auto;         /* 高さは自動 */
+  margin: 0;            /* マージンはなくす */
+  line-height: 2;       /* 200%のまま */
+  padding: 80px 50px 0 50px;   
+}
+.form_box,.c-btn{
+  margin-top: 40px;
+}
+
+/* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+
+/*{
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 2px;
+  }
+*?/

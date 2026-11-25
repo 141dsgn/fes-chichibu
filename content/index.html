@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>content</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/content.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+</script>
+
+<!-- レスポンシブ対応 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+  <header class="header">
+    <!-- 左上ロゴ -->
+    <a href="../index.html" class="header__logo">
+      <img src="../img/c_header_logo.png" alt="フェスのロゴマーク">
+    </a>
+
+    <!-- ハンバーガー -->
+  <div class="header__toggle js-header_toggle" id="menuToggle">
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+    </div>
+
+    <!-- ナビメニュー -->
+    <nav class="header__navi">
+    <ul>
+      <li><a href="../news/index.html">news</a></li>
+      <li><a href="../content/index.html">content</a></li>
+      <li><a href="../artist/index.html">music</a></li>
+      <li><a href="../map/index.html">map</a></li>
+      <li><a href="../notice/index.html">notice</a></li>
+      <li><a href="../ticket/index.html">ticket</a></li>
+    </ul>
+  </nav>
+  </header>
+
+
+  <main class="p-content">
+
+    <!-- タイトル -->
+    <h1 class="market_title">
+      <picture>
+        <source media="(max-width: 500px)" srcset="../img/otomorimarket48white.png">
+        <source media="(min-width: 501px)" srcset="../img/otomorimarket64white.png">
+        <img src="../img/otomorimarket64white.png" alt="ハロー音森マーケット">
+      </picture>
+    </h1>
+    <h4 class="market_text">FOODエリアやキッズエリア、マーケットエリアの素敵な出店のご紹介。<br>ライブの合間に遊べるコンテンツも盛りだくさん！</h4>
+
+    <!-- img -->
+     <div class="market_img full-width"><img src="../img/marketimg.png" alt="" width="" height=""></div>
+     
+    <div >
+      <!--------------- food ------------------->
+      <section class="food">
+        <div class="food_title">
+          <picture>
+            <source media="(max-width: 500px)" srcset="../img/food48black.png">
+            <source media="(min-width: 501px)" srcset="../img/food64black.png">
+            <img src="../img/food64black.png" alt="フード">
+          </picture>
+        </div>
+      
+        <!-- 1列目 -->
+        <div class="food_1">
+          <!-- １ -->
+          <div class="pizza_frame">
+              <picture class="pizza_img">
+                <source media="(max-width: 500px)" srcset="../img/food1_min.png">
+                <source media="(min-width: 501px)" srcset="../img/food1.png">
+                <img src="../img/food1.png" alt="ピザ">
+              </picture>
+
+              <div class="pizza_text">
+                <h3 class="pizza1">PIzZA NAKO</h3>
+                <p class="pizza2">秩父から世界を目指すピザ屋。独自の配合のチーズとソースは、コクと旨味が絶妙なバランスで、生地も全て手作りが自慢のオリジナルピザです。</p>
+              </div>
+          </div>
+          <!-- ２ -->
+          <div class="humburger">
+              <picture class="humburger_img">
+                <source media="(max-width: 500px)" srcset="../img/food2_min.png">
+                <source media="(min-width: 501px)" srcset="../img/food2.png">
+                <img src="../img/food2.png" alt="ハンバーガー">
+              </picture>
+              <div class="humburger_text">
+                <h3 class="humburger1">BARBARGER</h3>
+                <p class="humburger2">自家製酵母のバンズに、埼玉秩父で採れた新鮮野菜と、埼玉県産のジューシーなパテ、秩父の『MOKU牧場』のチーズも使ったハンバーガー。</p>
+              </div>
+          </div>
+          <!-- 3 -->
+          <div class="curry">
+              <picture class="curry_img">
+                  <source media="(max-width: 500px)" srcset="../img/food3_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food3.png">
+                  <img src="../img/food3.png" alt="カレー">
+              </picture>
+              <div class="curry_text">
+                <h3 class="curry1">サヤ食堂</h3>
+                <p class="curry2">カレーを愛する全ての人に届けたい。20種類以上のスパイスを効かせたスパイスカレー専門店。お子様が食べれるメニューもあります。</p>
+              </div>
+          </div>
+        </div>
+
+        <!-- 2列目 -->
+        <div class="food_2">
+           <!-- 4 -->
+            <div class="sand">
+              <picture class="sand_img">
+                  <source media="(max-width: 500px)" srcset="../img/food4_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food4.png">
+                  <img src="../img/food4.png" alt="サンドイッチ">
+              </picture>
+              <div class="sand_text">
+                <h3 class="sand1">菜菜PAN</h3>
+                <p class="sand2">野菜にこだわったサンドイッチ・スープを主におつくりしています。バインミーは看板メニュー。おやつに食べられるスイーツサンドもあります。</p>
+              </div>
+            </div>
+            <!-- ５ -->
+            <div class="jark">
+              <picture class="jark_img">
+                  <source media="(max-width: 500px)" srcset="../img/food5_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food5.png">
+                  <img src="../img/food5.png" alt="ジャークチキン">
+              </picture>
+              <div class="jark_text">
+                <h3 class="jark1">PARADISE KITCHEN</h3>
+                <p class="jark2">ジャークチキンはお肉を自家製のシーズニングに漬け込んでジャマイカ料理。やわらかジューシーなお肉は一度食べたら病みつきに。</p>
+              </div>
+            </div>
+            <!-- ６ -->
+            <div class="monsterfood">
+              <picture class="monsterfood_img">
+                  <source media="(max-width: 500px)" srcset="../img/food6_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food6.png">
+                  <img src="../img/food6.png" alt="モンスターフード">
+              </picture>
+              <div class="monsterfood_text">
+                <h3 class="monsterfood1">MONSTER FOODS</h3>
+                <p class="monsterfood2">モンスターがたくさんいるよ。モンスターを食べられる、モンスターフード専門店。どんなモンスターフードが出るかはお楽しみ。</p>
+              </div>
+            </div>
+        </div>
+
+        <!-- 3列目 -->
+        <div class="food_3">
+          <!-- 7 -->
+            <div class="lemon">
+              <picture class="lemon_img">
+                  <source media="(max-width: 500px)" srcset="../img/food7_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food7.png">
+                  <img src="../img/food7.png" alt="レモネード">
+              </picture>
+              <div class="lemon_text">
+                <h3 class="lemon1">内田レモン堂</h3>
+                <p class="lemon2">埼玉秩父の居酒屋『内田SAKE店』より、森の音フェスティバル限定メニューをご用意！自家製レモネードをはじめ、お楽しみください。</p>
+              </div>
+            </div>
+
+          <!-- 8 -->
+            <div class="kissa">
+              <picture class="kissa_img">
+                  <source media="(max-width: 500px)" srcset="../img/food8_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food8.png">
+                  <img src="../img/food8.png" alt="喫茶店">
+              </picture>
+              <div class="kissa_text">
+                <h3 class="kissa1">喫茶メロネード</h3>
+                <p class="kissa2">両国にある銭湯が併設している喫茶店が秩父に参上！どこか懐かしさを感じるメニューやイベント限定メニューもご用意しました。人気のグッズもご用意。</p>
+              </div>
+            </div>
+          <!-- 9 -->
+            <div class="crape">
+              <picture class="crape_img">
+                  <source media="(max-width: 500px)" srcset="../img/food9_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/food9.png">
+                  <img src="../img/food9.png" alt="クレープ">
+              </picture>
+              <div class="crape_text">
+                <h3 class="crape1">isi crepe</h3>
+                <p class="crape2">数種類の小麦粉をブレンドしたもちもちの生地がおいしいクレープ。埼玉県を中心に活動中。甘すぎないホイップは大人も子供もだいすき。</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+       <!--------------- shop ------------------->
+      <section class="shop">
+        <!-- shopタイトル -->
+        <div class="shop_title">
+          <picture>
+            <source media="(max-width: 500px)" srcset="../img/shop48white.png">
+            <source media="(min-width: 501px)" srcset="../img/shop64black.png">
+            <img src="../img/shop64black.png" alt="ショップ">
+          </picture>
+        </div>
+
+        <!-- 1列目のみ -->
+        <div class="shop_1">
+            <div class="flower">
+              <picture class="flower_img">
+                  <source media="(max-width: 500px)" srcset="../img/shop1_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/shop1.png">
+                  <img src="../img/shop1.png" alt="花屋">
+              </picture>
+              <div class="flower_text">
+                <h3 class="flower1">川上花店</h3>
+                <p class="flower2">埼玉県で活動する店舗のない生花店です。生花、ドライフラワーをお持ちします。会場で付けて楽しめる花冠も大人、子供サイズ販売。</p>
+              </div>
+            </div>
+            <div class="zakka">
+              <picture class="zakka_img">
+                  <source media="(max-width: 500px)" srcset="../img/shop2-min.png">
+                  <source media="(min-width: 501px)" srcset="../img/shop2.png">
+                  <img src="../img/shop2.png" alt="雑貨">
+              </picture>
+              <div class="zakka_text">
+                <h3 class="zakka1">Zakka KINO</h3>
+                <p class="zakka2">秩父で小さなお店を営業しています。人気のアンティーク雑貨や、オリジナルアクセサリーをお持ちします。</p>
+              </div>
+            </div>
+            <div class="candle">
+              <picture class="candle_img">
+                  <source media="(max-width: 500px)" srcset="../img/shop3_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/shop3.png">
+                  <img src="../img/shop3.png" alt="雑貨">
+              </picture>
+              <div class="candle_text">
+                <h3 class="candle1">A CANDLE</h3>
+                <p class="candle2">季節のお花をメインに、お花ひとつひとつのカタチを感じる作品づくりを心掛けています。同じ作品は一つもない一点ものの出会い。</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+
+      <!----------------- アクティビティ ------------------>
+      <section class="activity">
+        <!-- アクティビティタイトル -->
+        <div class="activity_title">
+          <picture>
+            <source media="(max-width: 500px)" srcset="../img/activity48black.png">
+            <source media="(min-width: 501px)" srcset="../img/activity64black.png">
+            <img src="../img/activity64black.png" alt="ショップ">
+          </picture>
+        </div>
+        <!-- 1列目 -->
+        <div class="activity_1">
+            <div class="zoo">
+               <picture class="zoo_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity1_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity1.png">
+                  <img src="../img/activity1.png" alt="動物園">
+              </picture>
+              <div class="zoo_text">
+                <h3 class="zoo1">音森どうぶつえん</h3>
+                <p class="zoo2">陸・水・空の様々な生き物に出会える移動動物園。音森動物園では一部の動物と触れ合い体験もできます。</p>
+              </div>
+            </div>
+            <div class="monstermaker">
+              <picture class="monstermaker_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity2_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity2.png">
+                  <img src="../img/activity2.png" alt="モンスター作り">
+              </picture>
+              <div class="monstermaker_text">
+                <h3 class="monstermaker1">MONSTER MAKER </h3>
+                <p class="monstermaker2">自分だけのオリジナルモンスターが作れる、ぬいぐるみ作りワークショップ。お好きなボディと材料でLET’S MAKING！</p>
+              </div>
+            </div>
+            <div class="magic">
+              <picture class="magic_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity3_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity3.png">
+                  <img src="../img/activity3.png" alt="マジックショー">
+              </picture>
+              <div class="magic_text">
+                <h3 class="magic1">MAGIC SHOW</h3>
+                <p class="magic2">子供たちに大人気のマジックショーをキッズエリアにて開催。<br>①11:00～<br>②15:00～の2回開催です。</p>
+              </div>
+            </div>
+        </div>
+        <!-- 2列目 -->
+        <div class="activity_2">
+            <div class="taniku">
+              <picture class="taniku_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity4_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity4.png">
+                  <img src="../img/activity4.png" alt="多肉狩り">
+              </picture>
+              <div class="taniku_text">
+                <h3 class="taniku1">多肉狩り</h3>
+                <p class="taniku2">多肉植物は切って増やせる！特徴を活かして多肉狩りをして寄せ植えを作ろう！育てて楽しむワークショップ。</p>
+              </div>
+            </div>
+            <div class="monstersukui">
+              <picture class="monstersukui_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity5_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity5.png">
+                  <img src="../img/activity5.png" alt=”モンスターすくい”>
+              </picture>
+              <div class="monstersukui_text">
+                <h3 class="monstersukui1">モンスターすくい</h3>
+                <p class="monstersukui2">カラフルモンスターを水中からすくって救って楽しもう！多肉狩りの寄せ植えに添えてもかわいいコラボ開催！</p>
+              </div>
+            </div>
+            <div class="shabon">
+              <picture class="shabon_img">
+                  <source media="(max-width: 500px)" srcset="../img/activity6_min.png">
+                  <source media="(min-width: 501px)" srcset="../img/activity6.png">
+                  <img src="../img/activity6.png" alt="シャボン玉エリア">
+              </picture>
+              <div class="shabon_text">
+                <h3 class="shabon1">シャボン玉エリア</h3>
+                <p class="shabon2">キッズエリアにてシャボン玉で遊べるエリアが登場！シャボン玉をたくさん作ってフェスを盛り上げよう！</p>
+              </div>
+            </div>
+        </div>
+        
+
+      </section>
+    </div>
+    
+  </main>
+
+  <!-- なみなみ -->
+   <div class="content_naminami full-width">
+    <img src="../img/content_naminami.png" alt="" width="" height="">
+   </div>
+
+  <!---------- フッター ----------->
+  <footer class="c-footer">
+    <div class="logomark"><a href="../index.html"><img src="../img/c_header_logo.png" alt="音という漢字に目玉が二つついているロゴマーク"></a></div>
+    <div class="logotype"><img src="../img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ　秩父音の森フェスティバル"></div>
+    <div class="sns">
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_x.png" alt="エックスのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+      </a>
+    </div>
+    <div class="privacy"><a href="../privacy/index.html">プライバシーポリシー</a></div>
+    <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+  </footer>
+
+</wrapper>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+ 
+/* ーーーーーーーーーー
+     ticketページ
+ーーーーーーーーーー */
+
+
+/* 全体 */
+.p-ticket-wrapper{
+    background-color: #B7D7A8;
+    padding: 280px 0 0 0 ;
+
+}
+
+/* 単品チケット */
+.p-ticket-wrapper .ticket-single{
+    background-image: url(../img/p-ticket-ticket-single-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center; /* 常に中央に表示 */
+    background-size: contain;             /* 幅・高さとも画面いっぱいに広げる */
+
+    width: 1284px;
+    height: 1113px;
+
+    text-align: center;
+    padding:80px;
+    margin: 0 auto 60px auto;
+    position: relative;
+}
+
+.p-ticket-wrapper .p-ticket .ticket-single .monster img{
+  position: absolute;
+  top: 20%;
+  left: -5%;
+}
+
+.ticket-single .title{
+    margin: 0 auto;
+    display: block;
+}
+
+.p-ticket .ticket-single .icon{
+    margin-bottom: 80px;
+}
+
+
+.container-ticketinfo{
+    display: flex;
+    justify-content: center;
+    gap: 110px; /* チケット情報の間隔 */
+    margin: 0 auto 160px auto;
+}
+
+.p-ticket .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top:3px solid #273340;
+    border-bottom: 3px solid #273340;
+
+    height: 94px;
+
+    padding: 0 20px 0 20px;
+    margin-bottom: 30px;
+}
+
+.p-ticket .price h2{
+    font-size: 40px;
+}
+.p-ticket .box{
+    width: 100%;
+}
+
+.ticketinfo02 .guide{
+    width: 500px;
+}
+
+.ticketversion{
+    text-align: center;
+    border-radius: 30px;
+    background-color: #F7943E;
+    color: #273340;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 190px;
+    height: 64px;
+    padding: 0 30px;
+    margin: 0 auto 30px auto;
+}
+
+.ticketinfo{
+    width: 40%;
+}
+
+.container-reserve{
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 60px;
+}
+
+.btn--reserve{
+    text-align: center;
+    border-radius: 30px;
+    background-color: #C9DB92;
+    color: #273340;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    width: 351px;
+    height: 131px;
+    padding: 0 30px;
+    box-shadow: 0px 4px 0px 0px  #479663;
+}
+
+.p-ticket .container-ticketinfo .price--saitama{
+    margin-top: -30px;
+    border-top: none;
+}
+
+
+
+/* 駐車券 */
+.ticket-parking{
+    background-image: url(../img/p-ticket-ticket-parking-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center; /* 常に中央に表示 */
+    background-size: contain;             /* 幅・高さとも画面いっぱいに広げる */
+
+    /* 1290 × 717 */
+    width: 1290px;
+    height: 717px;
+
+    text-align: center;
+    padding: 80px;
+    margin: 0 auto 250px auto;
+}
+.ticket-parking .title{
+    margin: 0 auto;
+    display: block;
+}
+
+
+.p-ticket .ticket-parking .icon{
+    margin-bottom: 50px;
+    margin-top: -10px;
+}
+
+.ticketinfo-parking{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.ticket-parking .box{
+    width: 100%;
+}
+
+
+/* なみなみ */
+.p-ticket .nami{
+    display:block;
+    width:100%;
+    margin:0;          
+    line-height:0;     
+}
+
+/* セットチケット */
+.ticket-set {
+    background-color: #479663;
+    background-image: url(../img/p-ticket-ticket-set-bg.png);
+        background-repeat: no-repeat;
+    background-position: center center; /* 常に中央に表示 */
+    background-size: contain;   
+
+    width: 100%;
+    text-align: center;
+    padding:80px;
+    margin: 0 auto;
+    
+}
+
+.ticket-set .title{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.ticket-set .lead{
+    margin: 0 auto 80px auto;
+    display: block;
+    text-align: center;
+}
+
+
+.ticket-set .box{
+    width: 580px;
+    margin: 0 auto;
+}
+
+.ticket-set .box .price{
+    height: 105px;
+}
+
+
+.sugestion{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ticket-set .price{
+    margin-bottom: -10px;
+}
+
+
+
+
+/* 
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　    
+        　スマホ対応
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+@media (max-width: 500px) {
+
+    .p-ticket-wrapper{
+        padding: 0;
+    }
+
+.p-ticket
+    .ticket-single,
+    .ticket-parking,
+    .ticket-set{
+        background-image: none ;
+        width: 100%;
+        height: auto;
+        padding: 160px 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+
+    .ticket-single{  background-color: #96D07A; }
+    .ticket-parking{ background-color: #FFFAE8; }
+    .ticket-set{     background-color: #B7D7A8; }
+
+
+
+    .ticket-single .title,
+    .ticket-parking .title,
+    .ticket-set .title{
+        max-width: 88%;
+    }
+
+    .ticket-set .lead{
+        margin: 40px auto 80px;
+        padding: 0 4px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .p-ticket-wrapper .p-ticket .ticket-single .monster img{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 30%;
+    }
+
+    .p-ticket .price{
+        height: 110px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .p-ticket .price h2{ font-size: 28px; }
+    .p-ticket .price h3{ font-size: 20px; }
+
+    .ticketinfo01{
+        margin-bottom: 64px;
+    }
+
+    .container-ticketinfo{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        margin: 0 auto;
+    }
+    .ticketinfo{ width: 100%; }
+    .ticketinfo02 .guide{ width: auto; }
+
+    .ticketversion{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .ticketinfo-parking{
+        width: 100%;
+        padding: 0 4px;
+    }
+
+    .ticket-set .box{
+        width: 100%;
+        max-width: 520px;
+    }
+
+
+
+    .sugestion{
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    
+    .sugestion .icon-baby{
+        max-width: 120px;
+        height: auto;
+    }
+
+    .container-reserve{
+        gap: 10px;
+        margin-top: 28px;
+        padding: 0 2px;
+    }
+
+    .btn--reserve{
+        flex: 1 1 0;
+        max-width: calc(50% - 6px);
+        height: 64px;
+        padding: 0 12px;
+        font-size: 16px;
+        border-radius: 18px;
+        box-shadow: 0px 3px 0px 0px #479663;
+        justify-content: center;
+        gap: 8px;
+    }
+    .btn--reserve h3{
+        font-size: 14px;
+        line-height: 1;
+    }
+    .btn--reserve .logo-eplus,
+    .btn--reserve .logo-pia{
+        height: 40px;
+        width: auto;
+    }
+
+
+
+    .p-ticket .ticket-single .icon{ 
+        margin-bottom:120px; 
+    }
+
+    .ticket-set .title{
+        margin-bottom: 20px; 
+    }
+
+    .p-ticket .nami{
+        display: none;  
+    }
+
+    .p-ticket p {
+        text-align: center;
+    }
+
+    .p-ticket-wrapper .price--set{
+        height: 200px;
+    }
+
+    .p-ticket-wrapper .c-footer{
+        background-color: #479663;
+    }
+
+
+
+}
+
+/*  
+ ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー  */
+
+/* *{
+outline: 1px solid red;
+} */
+

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>map</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/map.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+</script>
+
+<!-- レスポンシブ対応 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+      <!-- ヘッダー -->
+      <header class="header">
+        <!-- 左上ロゴ -->
+        <a href="../index.html" class="header__logo">
+          <img src="../img/c_header_logo.png" alt="フェスのロゴマーク">
+        </a>
+
+        <!-- ハンバーガー -->
+        <div class="header__toggle js-header_toggle" id="menuToggle">
+          <span class="header__toggle-line"></span>
+          <span class="header__toggle-line"></span>
+          <span class="header__toggle-line"></span>
+        </div>
+
+        <!-- ナビメニュー -->
+        <nav class="header__navi">
+          <ul>
+            <li><a href="../news/index.html">news</a></li>
+            <li><a href="../content/index.html">content</a></li>
+            <li><a href="../artist/index.html">music</a></li>
+            <li><a href="../map/index.html">map</a></li>
+            <li><a href="../notice/index.html">notice</a></li>
+            <li><a href="../ticket/index.html">ticket</a></li>
+          </ul>
+        </nav>
+
+        
+      </header>
+
+
+    
+      <main class="p-map">        
+    
+          <!--------- areamap ------------------->
+          <section class="areamap_box">
+            <!-- ariamapタイトル -->
+            <h1  class="areamap_title">
+              <picture>
+                <source media="(max-width: 500px)" srcset="../img/areamap40black.png">
+                <source media="(min-width: 501px)" srcset="../img/areamap64black.png">
+                <img src="../img/areamap64black.png" alt="エリアマップ">
+              </picture>
+            </h1>
+            <h3 class="areamap_text">会場内の案内マップがこちらです。<br>託児所や授乳室もご用意しています。</h3>
+            <!-- map画像 -->
+            <h1 class="areamap_img">
+              <picture>
+                <source media="(max-width: 500px)" srcset="../img/areamap_mobile.png">
+                <source media="(min-width: 501px)" srcset="../img/areamap_desctop.png">
+               <img src="../img/areamap_desctop.png" alt="地図タイトル画像">
+              </picture>
+            </h1>  
+          </section>
+          <!-- なみなみ -->
+          <div class="map_naminami full-width">
+            <img src="../img/map_naminami1.png">
+          </div>
+          
+
+          <!---------- accessmap ---------------->
+          <section class="access_box">
+            <div class="access_inner_box">
+                <!-- accessタイトル -->
+                <h1 class="access_title">
+                  <picture>
+                    <source media="(max-width: 500px)" srcset="../img/access40white.png">
+                    <source media="(min-width: 501px)" srcset="../img/access64black.png">
+                    <img src="../img/access64black.png" alt="アクセスマップ">
+                  </picture>
+                </h1>
+                <!-- 住所 -->
+                <div class="access_address">
+                  <h3>会場　日向山<br>〒368-0071 埼玉県秩父郡横瀬町芦ケ久保999-99</h3>
+                </div>
+
+                <!-- MAP2カラム -->
+                <div class="map2column">
+                  <div class="map_left">
+                      <div class="access_2colomntitle"><h3>会場へのアクセス</h3></div>
+                      <div class="access_googlmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12943.602795535922!2d138.26098946378215!3d35.802371060771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c68d3a45707d3%3A0x80d3d2c4822527cd!2z5pel5ZCR5bGx!5e0!3m2!1sja!2sjp!4v1754570185660!5m2!1sja!2sjp" width="410" height="410" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                      <div class="access_text"><p>■電車でお越しの方<br>　【電車】池袋駅からー特急ラビューちちぶ<br>　（有料特急西武秩父行）約1時間15分ー横瀬駅下車<br>　横瀬駅よりシャトルバス（7㎞）約20分<br><br>■お車でお越しの方<br>　新潟線/関越自動車道<br>　鶴ヶ島ＩＣから約1時間10分（44.4ｋｍ）</p></div>
+                  </div>
+                  <div class="map_right">
+                      <div class="access_2colomntitle"><h3>駐車場のご案内</h3></div>
+                      <div class="access_googlmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14816.773497421149!2d138.25961996333794!3d35.802806783882595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c697053d57405%3A0x771c10fcef24db21!2z5pel5ZCR5bGx6Zuo6YeP6Kaz5ris5omA!5e0!3m2!1sja!2sjp!4v1754570422228!5m2!1sja!2sjp" width="410" height="410" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                      <div class="access_text"><p>有料駐車場：1日1台 3,000円<br>会場まで徒歩5分。10時から利用可能となります。</p></div>        
+                  </div>
+                </div>
+              </div>
+          </section>
+
+         <!-- なみなみ -->
+          <div class="map_naminami full-width">
+            <img src="../img/map_naminami2.png">
+          </div>
+
+          <!--------- シャトルバス ------------>
+          <section class="shuttlebus_box">
+            <div class="shuttlebus_inner_box">
+                <!-- シャトルバスタイトル -->
+                <div class="shuttlebus_title"><h2>シャトルバスのご案内</h2></div>
+                <!-- 詳細2カラム -->
+                <div class="shuttlebus_2column">
+                  <div class="shuttlebus_leftcolumn">
+                    <!-- シャトルバス乗り場地図 -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3228.320287598324!2d139.09762507600342!3d35.988039972489766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ecbc244524615%3A0x90abca2b64bd6fa3!2z5qiq54Cs6aeF5YWl5Y-j77yI44OQ44K577yJ!5e0!3m2!1sja!2sjp!4v1754570538493!5m2!1sja!2sjp" width="560" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <div>
+                    <p>■往路：西武鉄道 横瀬駅→ 日向山臨時駐車場<br>■復路：日向山臨時駐車場→西武鉄道 横瀬駅<br>　（所要時間：共に片道　約20分）<br>　※道路状況により時間は変更となる場合がございます。<br><br>出発時間<br>■往路：8:00～12:00まで随時運行予定<br>■復路：16:00～随時運行予定<br><br>販売方法<br>■当日券のみ<br>　料金：¥1,000-（片道）※<br>　※小学生未満無料<br>　販売場所：バス乗車場所</p>
+                  </div>
+                </div>
+              
+                <!-- 赤ちゃん連れ案内2カラム -->
+                <div class="akachan">
+                  <dev class="akachan_img">
+                    <picture>
+                      <source media="(max-width: 500px)" srcset="../img/map_akachan_smartphone.png">
+                      <source media="(min-width: 501px)" srcset="../img/akachanpc.png">
+                      <img src="../img/akachanpc.png" alt="説明文" >
+                    </picture>
+                  </dev>
+                  <div class="akachan_text"><h3>赤ちゃん連れの方も安心してご利用いただけるように<br>ベービーカー置き場もご用意しています。</h3></div>
+                </div> 
+            </div>
+          </section>
+          <!-- なみなみ -->
+           <div class="map_naminami full-width">
+            <img src="../img/map_naminami3.png">
+           </div>
+  
+      </main>
+    </div>
+
+    
+    
+    <!-- フッター -->
+  <!-- フッター -->
+  <footer class="c-footer">
+    <div class="logomark"><a href="../index.html"><img src="../img/c_header_logo.png" alt="音という漢字に目玉が二つついているロゴマーク"></a></div>
+    <div class="logotype"><img src="../img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ　秩父音の森フェスティバル"></div>
+    <div class="sns">
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_x.png" alt="エックスのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+      </a>
+    </div>
+    <div class="privacy"><a href="../privacy/index.html">プライバシーポリシー</a></div>
+    <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+  </footer>
+
+
+
+
+</body>
+
+</html>

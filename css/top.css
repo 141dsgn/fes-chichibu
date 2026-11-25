@@ -1,0 +1,1497 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+
+
+
+/* ーーーーーーーーーー
+     topページ
+ーーーーーーーーーー */
+
+
+/* 全体 */
+
+.p-top{
+  color: #FFFDF6;
+}
+
+.p-top a{
+    color: #FFFDF6;
+}
+
+.header{
+  display: none;
+}
+
+
+
+
+/* イメージ切り替わり */
+
+.p-top .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center center;
+  
+  animation: image-switch-animation 25s infinite;
+
+    pointer-events: none;
+}
+
+.p-top .hero {
+  display: grid;
+  /* grid-template-columns: minmax(480px, 55vw) 1fr; */
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+  position: relative;
+  padding: 0 20px;
+
+}
+
+.p-top .hero_image {
+  position: sticky;
+  top: 0;
+  height: 100vh;        /* 画面高で貼り付け */
+  display: grid;
+  place-items: center;  /* 画像を中央に */
+  overflow: visible;     /* 念のためはみ出しガード */
+  z-index: 0;           /* 右カラムより下でOK（重ならない想定） */
+  background: none;     /* 背景は使わず、下の .slides に集約 */
+}
+
+
+
+
+.p-top .hero_image .image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: contain;           /* 等倍 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: image-switch-animation 20s infinite;
+  pointer-events: none;
+}
+
+/* 実寸の“台座”（ここに切り替え画像を重ねる） */
+.p-top .hero_image .slides {
+
+  position: relative;
+  width: 1200px;           /* ← 横幅アップ */
+  height: calc(1100px * 614.4 / 922.26); /* 縦横比キープ */
+}
+
+.p-top .src1 {
+  background-image: url(../img/top-mv-image01.png);
+}
+.p-top .src2 {
+  background-image: url(../img/top-mv-image02.png);
+}
+.p-top .src3 {
+  background-image: url(../img/top-mv-image03.png);
+}
+.p-top .src4 {
+  background-image: url(../img/top-mv-image04.png);
+}
+
+@keyframes image-switch-animation {
+  0%{ opacity: 0;}
+  5%{ opacity: 1;}
+  25%{ opacity: 1;}
+  30%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+
+.p-top .image:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.p-top .image:nth-of-type(2) {
+  animation-delay: 5s;
+}
+.p-top .image:nth-of-type(3) {
+  animation-delay: 10s;
+}
+.p-top .image:nth-of-type(4) {
+  animation-delay: 15s;
+}
+
+/* ===== ヒーロー全体（PC用） ===== */
+.p-top .hero {
+  display: grid;
+  grid-template-columns: 1000px 560px; /* 左1000px + 右560px */
+  gap: 40px;                           /* カラム間のすき間 */
+  justify-content: center;             /* セット全体を中央寄せ */
+  align-items: center;                  /* 縦位置をそろえる */
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 左：スライド台座サイズ固定 */
+.p-top .hero_image .slides {
+  position: relative;
+  width: 1000px;
+  height: calc(1000px * 614.4 / 922.26); /* 縦横比をキープ */
+}
+
+
+
+
+
+
+
+/* 目の箱 */
+.p-top .eye-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+.p-top .hero_image .eye-wrapper {
+  position: absolute;  /* 親に対して絶対位置 */
+  top: 0;           /* ← 上下位置を調整 */
+  left: 50%;           /* 横の基準位置 */
+  transform: translateX(-50%); /* 中央基準にする */
+  width: 180px;        /* 目の左右間隔を決める */
+}
+
+
+
+
+/* 白目 */
+.p-top .eye-white {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: 68px;
+}
+
+.p-top .eye-white.left {
+    left: 38px;
+}
+
+.p-top .eye-white.right {
+    right: 38px;
+}
+
+/* 瞳 */
+
+
+.p-top .eye {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden; 
+}
+
+.p-top .eye-ball {
+    width: 25px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px; 
+    top: 10px;
+}
+
+
+
+/* src01 ＝ 1枚目の背景（または要素）にだけ適用 */
+.p-top .hero_image .src1 .eye-wrapper {
+  top: -2%;          /* 上下位置 */
+  left: 50%;          /* 左右位置 */
+  transform: translateX(-50%) scale(2.8); /* 中央基準 & 大きさ調整 */
+}
+
+
+
+
+/* ヘッダー */
+.header--top {
+  font-family: "Coming Soon", cursive;
+  padding-top: 24px;
+}
+
+.nav-list--top{
+  display: flex;
+  gap: 50px;
+
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+.p-top .nav-link {
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  align-items: center;     /* 横方向中央 */
+  justify-content: center; 
+  width: 100%;
+  height: 100%;            
+  text-decoration: none;
+  gap: 10px;
+}
+
+.p-top .nav-link img{
+  width: 50%;
+}
+
+.header--top .nav-link img {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.header--top .nav-link:hover img,
+.header--top .nav-link:focus img {
+  animation: shake 0.4s ease;
+}
+
+.header--top p{
+  font-size: 28px;
+}
+
+.p-top .monster-ticket--mini {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-image: url(../img/p-top-header-cta-mon--x2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.p-top .monster-ticket--label {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFDF6;
+  font-size: 32px;
+  font-family: "Coming Soon", cursive;
+  pointer-events: none;
+}
+
+
+
+.p-top .hero {
+  display: grid;
+  grid-template-columns: 922.26px 1fr;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+}
+
+
+
+/* ヒーローコンテンツ */
+
+.p-top .hero_content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 0;
+  margin-right: 0;       
+  width: 1000%;
+
+  align-items: center;
+}
+
+
+
+.p-top .logo{
+  position: relative;
+  display: inline-block;
+
+  margin-bottom: 80px;
+
+}
+
+.p-top .logo-eyes {
+  position: absolute;
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  
+  }
+
+
+
+
+.p-top .news{
+text-align: center;
+margin-right: 25px;
+}
+
+.p-top .news .title{
+  margin-bottom: 56px;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+
+.news-item{
+  display: flex;
+  align-items: center;
+}
+
+.news-item img{
+  display: inline-block;
+  margin-right: 18px;  
+}
+
+.news-item a{
+  display: inline-block;  
+
+}
+
+.news .c-btn{
+  margin: 0 auto;
+}
+
+
+
+.p-top .hero_content {
+  min-height: 100vh;          /* 画面高に合わせる */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* 縦中央揃え */
+  align-items: center;        /* 横中央揃え（左寄せならflex-start） */
+  gap: 56px;                   /* ロゴとニュースの間隔 */
+  width: 100%;
+  max-width: 560px;
+  margin: 0;
+  text-align: center;
+}
+
+
+.hero_content .logo {
+  display: grid;
+  place-items: center;
+  width: max-content;
+  margin-bottom:80px; 
+}
+
+
+.hero_content .logo .mark img { display: block; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 922.26px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.hero_image { z-index: 0; }
+.hero__content, .hero_content { z-index: 1; }
+
+
+.p-top .logo {
+  display: grid;
+  place-items: center;
+  width: max-content;
+  margin: 0;
+}
+
+
+
+
+/* フェスイメージ01 */
+.fesimage01{
+  margin-top: 260px;
+}
+
+
+/* 固定チケモン */
+.fixed-cta {
+  position: sticky;
+  top: 40px;
+  margin-left: auto;
+  margin-right: 40px;
+  margin-top: 40px;
+
+  width: 158px;
+  height: 161px;
+  background-image: url(../img/top-ticket-monster.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 24px;
+  font-family: "Coming Soon", cursive;
+  z-index: 1;
+}
+
+.fixed-cta.is-fixed { 
+  position: sticky; 
+  top: 40px; 
+  right: auto; 
+  margin: 40px 40px 0 auto; 
+  }
+
+
+
+
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(-3px, 2px) rotate(-1deg); }
+  40% { transform: translate(3px, -2px) rotate(1deg); }
+  60% { transform: translate(-2px, 1px) rotate(-1deg); }
+  80% { transform: translate(2px, -1px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+
+.fixed-cta.is-shaking {
+  animation: shake 0.4s ease;
+}
+
+.fixed-cta:hover {
+  animation: shake 0.4s ease;
+}
+
+
+.fixed-cta a {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+
+/* セクション共通 */
+
+.about, .lineup, .foryou, .ticket, .access, .sponsors {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center; 
+  margin: 0 auto;
+}
+
+.lead, .text {
+  text-align: center;
+}
+
+
+
+
+/* セクション：about */
+.about{
+  background-image: url(../img/top-about-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;      /* ← 画像サイズそのまま */
+  
+  width: 1290px;
+  height: 1080px;
+
+  padding-top: 100px;
+  margin: 0 auto;  
+  
+  color: #273340;
+}
+
+.about{
+  font-size: 18px;
+}
+
+.about .title img {
+  display: block;
+  margin: 0 auto;
+}
+
+.about .title{
+  margin-bottom: 30px;
+}
+
+.about .box-text--h3{
+  margin-bottom: 45px;
+  width: 433px;
+}
+
+
+
+
+/* セクション：lineup */
+
+.p-top .lineup{
+  position: relative;
+  margin-top: 130px;
+  padding-bottom: 80px;
+}
+
+.p-top .lineup .monster-mini01{
+  position: absolute;
+  top: 43%;
+  left: 32%;
+}
+
+.p-top .lineup .monster-mini02{
+  position: absolute;
+  top: 65%;
+  left: 60%;
+}
+
+.p-top .lineup .monster-mini03{
+  position: absolute;
+  top: 85%;
+  left: 30%;
+}
+
+.p-top .lineup .monster-mini04{
+  position: absolute;
+  top: 96%;
+  left: 42%;
+}
+
+.lineup .title{
+  padding-bottom: 40px;
+}
+
+.lineup .lead{
+  padding-bottom: 80px;
+}
+
+.artist{
+  margin-bottom: 120px;
+}
+
+.artist-list{
+  display: flex;
+  gap: 30px;
+}
+
+.artist .item .name {
+  text-align: center;
+}
+
+.artist .line01, .line02{
+  margin-bottom: 120px;
+}
+
+
+
+
+/* セクション：foryou */
+
+.foryou{
+  background-image: url(../img/top-foryou-bg.png);
+  background-repeat: no-repeat;
+  background-size: auto;      /* ← 画像サイズそのまま */
+  
+  width: 1281px;
+  height: 1220px;
+
+  padding-top: 120px;
+  margin-bottom: 140px;
+  
+  color: #273340;
+}
+
+.foryou .title{
+  margin-bottom: 40px;
+}
+
+.foryou .lead{
+  margin-bottom: 80px;
+}
+
+.foryou h3{
+  margin-bottom: 80px;
+
+  width: 629px;
+}
+
+.image-text-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.image-text-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-text-wrapper .q {
+  position: absolute;
+  top: 56px;
+  left: 182px;
+  transform: translateX(-50%);
+
+  font-size: 20px;
+  font-weight: bold;
+  width: 190px;
+
+  text-align: center;
+}
+
+.image-text-wrapper .a {
+  position: absolute;
+  bottom: 60px;
+  left: 182px;
+  transform: translateX(-50%);
+
+  font-weight: bold;
+  font-size: 20px;
+  width: 330px;
+  height: 147px;
+
+  text-align: center;
+}
+
+.foryou .list{
+  display: flex;
+  margin-bottom: 90px;
+}
+
+
+.item .q-1{
+  left:54%;
+}
+
+.item .q-3{
+  left:49%;
+}
+
+
+.item .a-1{
+  left: 233px;
+  bottom: 116px;
+}
+
+.item .a-3{
+  bottom: 196px;
+}
+
+
+
+
+
+/* セクション：ticket */
+
+.p-top .ticket{
+  background-image: url(../img/top-ticket-bg-nomonster.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+/* 1235 × 1194*/
+  width: 1304px;
+  height: 1344px;
+
+  padding-top: 160px;
+  margin-bottom: 260px;
+  color: #273340;
+  position: relative;
+}
+
+.p-top .ticket .monster img{
+  position: absolute;
+  top: 60%;
+  left: -5%;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.p-top .ticket .title{
+  margin-bottom: 120px;
+}
+
+.p-top .ticket .container01{
+  display: flex;
+    gap: 190px;
+    margin-bottom: 110px;
+
+}
+
+.p-top .ticket .price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top:3px solid #273340;
+  border-bottom: 3px solid #273340;
+
+  height: 94px;
+
+  padding: 0 20px 0 20px;
+  margin-bottom: 34px;
+}
+
+.p-top .ticket .c-btn{
+  background-color: #479663;
+  color: #FFFDF6;
+  box-shadow: 0px 4px 0px 0px  #B7D7A8;
+}
+
+.p-top .ticket .c-btn:hover{
+  box-shadow:none;
+}
+
+.p-top .ticket .box{
+  width: 370px;
+}
+
+.p-top .ticket .price h2{
+    font-size: 40px;
+}
+
+.p-top .ticket .prices-wrapper{
+  margin-bottom: 67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-top .box--parking{
+  margin: 0 auto;
+}
+
+
+/* フェスイメージ02 */ 
+/* .fesimage02{
+  margin-top: 260px;
+} */
+
+
+/* セクション：access */
+.access{
+  background-color: #96D07A;
+
+  color: #273340;
+  
+  padding-top: 260px;
+  padding-bottom: 120px;
+}
+
+.access .title{
+  margin-bottom: 80px;
+}
+.access .container--2column{
+  display: flex;
+  /* align-items: center; */
+  gap: 40px;
+}
+
+.access .info h2{
+  margin-bottom: 40px;
+}
+
+.access .info .address{
+  margin-bottom: 40px;
+}
+
+.access .info p{
+  margin-bottom: 50px;
+}
+
+.access .map{
+  border-radius: 30px;
+}
+
+
+
+/* セクション：sponsors */
+.sponsors{
+background-color: #B7D7A8;
+  min-height: 600px;             /* 好みで下限。不要なら消してOK */
+  padding-top: 140px;
+}
+
+.sponsors .list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.sponsors .title{
+  margin-bottom: 80px;
+}
+
+.container--3column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+
+
+
+
+
+
+
+/* 
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　    
+        　スマホ対応
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+
+
+@media screen and (max-width: 500px) {
+  
+  .header{
+      display: block;
+    }
+
+  .p-top .header--top{
+      display: none;
+    }
+  
+  
+  .p-top .hero_image{
+      display: none;
+    }
+
+  .hero_content {
+    display: flex;
+    flex-direction: column;   /* ロゴ→ニュースを縦並びに */
+    justify-content: center;  /* 縦方向の中央寄せ */
+    align-items: center;      /* 横方向の中央寄せ */
+    height: 100%;             /* コンテナいっぱいで中央寄せ */
+    text-align: center;       /* テキスト中央寄せ（必要なら） */
+  }
+
+  
+  .hero_content .logo {
+    margin-bottom: 20px;      /* ロゴとニュースの間隔 */
+  }
+
+  .p-top .logo-eyes {
+      position: absolute;
+      top: -25px;
+      left: 40%;
+      transform: translateX(-50%);
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  .p-top .news{
+      text-align: center;
+      margin:0 auto;
+}
+
+
+  .p-top .fesimage01{
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+  .p-top .fixed-cta {
+  display: none;
+}
+
+  .p-top .fixed-cta.is-fixed {
+  display: none;
+}
+
+
+  .p-top .about{
+    /* フルブリードのままでOK */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    background-image: url(../img/p-top-sp-about-bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto;      /* ← 縮めない！ */
+
+    /* 実寸の縦を確保（画像が 1281×1220 の例）*/
+    min-height: 1220px;
+
+    /* 横スクロールが出ないように親で隠す */
+    overflow: hidden;
+
+    padding: 80px;
+
+  }
+
+    .p-top .about p{
+font-weight: bold;
+  }
+
+  .p-top .about .title{
+    margin-bottom: 60px;
+  }
+
+  .p-top .about .lead{
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  #ticket-mon-spacer{
+    display: none;
+  }
+
+
+
+
+
+  .p-top  .lineup { 
+    padding: 0 20px 130px 20px; 
+  }
+  .p-top .artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .p-top  .artist .item {
+    width: min(70%, 360px);
+    margin-left: 10px;
+  }
+  .p-top  .artist .item .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .p-top  .line01 .item:nth-child(1),
+  .line01 .item:nth-child(3),
+  .line02 .item:nth-child(2),
+  .line03 .item:nth-child(1),
+  .line03 .item:nth-child(3) {
+    margin-right: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .p-top  .line01 .item:nth-child(2),
+  .line02 .item:nth-child(1),
+  .line02 .item:nth-child(3),
+  .line03 .item:nth-child(2) {
+    margin-left: auto;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .p-top .line01, .line02, .line03 {
+    margin-bottom: 0;
+      width: 95vw;
+  } 
+
+  
+  .p-top .lineup .monster-mini01{
+    position: absolute;
+    top: 27%;
+    left: 10%;
+}
+
+  .p-top .lineup .monster-mini02{
+    position: absolute;
+    top: 53%;
+    left: 75%;
+}
+
+  .p-top .lineup .monster-mini03{
+    position: absolute;
+    top: 77%;
+    left: 10%;
+}
+
+  .p-top .lineup .monster-mini04{
+    position: absolute;
+    top: 96%;
+    left: 30%;
+}
+
+ .p-top .lineup .c-btn {
+    width:  280px;
+    height: 48px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+
+  .foryou {
+  background-color: #B7D7A8;
+  width: 100%;
+  height: auto;
+  padding: 120px 20px;
+  color: #273340;
+      overflow: hidden;
+}
+
+.foryou .list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.image-text-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.image-text-wrapper > img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.image-text-wrapper .q,
+.image-text-wrapper .a {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 78%; 
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.5;
+  /* font-size: clamp(13px, 3.6vw, 16px); */
+  text-shadow: 0 1px 0 rgba(0,0,0,.18);
+}
+
+/* ===== item01（415×520）===== */
+.foryou .list .item:nth-child(1) .q {
+  top: 12%;   /* 56 / 520 * 100 */
+  left: 54%;
+  width:40%;
+}
+.foryou .list .item:nth-child(1) .a {
+  bottom: 22.308%; /* 116 / 520 * 100 */
+  left: 57%;   /* 233 / 415 * 100 */
+  width: 70%;
+}
+
+/* ===== item02（364×464）===== */
+.foryou .list .item:nth-child(2) .q {
+  top: 14%;   /* 56 / 464 * 100 */
+  left: 50%;      /* 182 / 364 * 100 ≒ 50% */
+}
+.foryou .list .item:nth-child(2) .a {
+  bottom: 12.931%; /* 60 / 464 * 100 */
+  left: 50%;
+}
+
+/* ===== item03（368×601）===== */
+.foryou .list .item:nth-child(3) .q {
+  top: 12%;    /* 56 / 601 * 100 */
+  left: 49%;      /* PCの .q-3 を踏襲 */
+  width: 50%;
+}
+.foryou .list .item:nth-child(3) .a {
+  bottom: 33%; /* 196 / 601 * 100 */
+  left: 49.457%;   /* 182 / 368 * 100 */
+}
+
+.foryou .lead-sub {
+  max-width: 100%;
+  text-align: center;
+}
+
+.foryou .lead {
+margin-bottom: 40px;
+
+  
+}
+
+
+
+
+  /* ticket セクションをスマホ幅に収める */
+  .p-top .ticket{
+    background-color:#F7943E;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 120px 16px;
+    margin: -180px auto 80px;
+    background-size: contain;     /* 画像切らしたくないなら contain / 余白出てもOKなら cover */
+    background-position: center top;
+    overflow: hidden;             /* はみ出し防止 */
+  }
+
+  .p-top .ticket .title{
+    margin-bottom: 32px;
+  }
+
+  .p-top .ticket .container01{
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+    .p-top .ticket .container01 .box{
+      margin-bottom: 40px;
+    }
+
+  .p-top .ticket .box{
+    width: 100%;
+  }
+
+  .p-top .ticket .price{
+    height: auto;
+    padding: 12px 16px;
+  }
+  .p-top .ticket .price h2{
+    font-size: 28px;
+  }
+
+  .p-top .ticket .prices-wrapper{
+    margin-bottom: 80px;
+  }
+
+
+  .p-top .c-btn{
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto
+  }
+
+  .p-top .ticket .monster img{
+    position: absolute;
+    top: 82%;
+    bottom: 8%;
+    left: auto;
+    right: 5px;           
+    height: auto;
+    width: 100px;
+  }
+
+
+
+  /* セクション：アクセス */
+
+  .access{
+    width: 100%;
+    height: auto;
+    padding: 120px 20px;
+    overflow: hidden;
+  }
+
+.access .container--2column{
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+.access .container--2column .info {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .access .container--2column .info p{
+  text-align: center;
+  }
+
+  
+  .access .container--2column .info h3{
+  text-align: center;
+  }
+
+
+
+
+
+
+  .wrapper {
+    padding: 0;
+  }
+
+.p-top  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+
+.p-top  .hero_content .logo  {
+    margin-left: 0;         /* 左寄せのマージンを解除 */
+    margin-right: 0;        /* 念のため右マージンも解除 */
+    text-align: center;     /* 横中央に配置 */
+    display: block;         /* ブロック化（中央寄せを効かせやすく） */
+    margin-inline: auto;    /* 横方向自動マージンで中央寄せ */
+  }
+
+.p-top  .logo img {
+    max-width: 80%;
+    height: auto;
+  }
+
+.p-top  .news .title {
+    margin-bottom: 30px;
+  }
+
+.p-top  .news .c-btn {
+    font-size: 14px;
+  }
+
+
+
+
+
+  .p-top .ticket .box {
+    width: 100%;
+  }
+
+.p-top  .access .map iframe {
+    width: 100%;
+    height: 400px;
+  }
+
+
+
+  /* .sponsors .container--2column, .container--3column{
+    flex-direction: column;
+  } */
+
+.p-top   .sponsors{
+    width: 100%;
+    height: auto;
+    padding: 120px 20px;
+    background-image: none;
+    background-color: #B7D7A8;
+  }
+
+.p-top   .sponsors .list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+  }
+
+.p-top   .sponsors .list .container--3column{
+    display: contents;
+  }
+
+.p-top   .sponsors .item{
+    flex: 0 0 calc(50% - 8px); /* gapぶん差し引き */
+  }
+.p-top   .sponsors .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+
+
+ .p-top .wrapper .nami-wrapper{
+  display:none;
+ }
+
+   .p-top .hero_content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  .p-top .hero_content .logo{
+    display:grid;
+    place-items:center;
+    width:fit-content;
+    margin: 0 auto !important;   /* ← * { margin:5px } を打ち消す */
+  }
+
+
+    /* 親ごと中央寄せ */
+  .p-top .hero_content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;   /* ← 横中央寄せは親で完結 */
+    text-align:center;
+    width:100%;
+  }
+
+  /* ロゴを絶対に中央にする（margin競合・幅問題を無視して固定） */
+  .p-top .hero_content .logo{
+    position: static !important;   /* 位置指定やめる */
+    left: auto !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto !important;     /* これだけで中央 */
+    width: auto;
+  }
+
+  /* 画像自体も中央 */
+  .p-top .hero_content .logo .mark img{
+    display:block;
+    margin:0 auto;
+  }
+
+    /* 目の位置が左にズレて見える問題も同時に補正 */
+   .p-top .logo-eyes{
+    top: 12px;
+    left:50%;
+    transform: translateX(-50%)
+  }
+  
+    html, body { overflow-x: hidden; } /* 念のため */
+
+
+
+  /* ========== about セクション（500px以下専用）========== */
+  .p-top .about{
+    /* フルブリード＆比率で高さを自動決定 */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    /* 元画像 1290×1080 を基準に比率キープ */
+    aspect-ratio: 1290 / 1080;
+    height: auto;
+    min-height: auto;              /* ← 固定の最小高さを解除 */
+    background-image: none; /* 背景画像はなし */
+    background-color: #; /* 背景色は固定 */
+
+    /* 余白は小さめ可変（SE想定） */
+    padding: clamp(24px, 6vw, 48px);
+    overflow: hidden;
+    color: #FFFDF6
+  }
+
+  /* 強制改行をOFF（任意で戻したい場所は <span class="keep-br"><br></span> に） */
+  .p-top .about .lead br,
+  .p-top .about .text br { display: none; }
+
+  .p-top .about .title{ margin-bottom: clamp(24px, 6vw, 40px); }
+  .p-top .about .lead{
+    width: 88%;
+    margin: 0 auto clamp(16px, 4vw, 24px);
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+  .p-top .about .text{
+    width: 90%;
+    margin: 0 auto;
+    line-height: 1.9;
+    text-wrap: pretty;
+  }
+
+  /* ========== foryou セクション（500px以下専用）========== */
+  .foryou {
+    background-color: #B7D7A8;   /* 背景画像だと切れやすいのでスマホは色面推奨 */
+    width: 100%;
+    height: auto;
+    padding: clamp(64px, 12vw, 120px) 16px;
+    color: #273340;
+    overflow: hidden;
+  }
+  .foryou .title{ margin-bottom: clamp(20px, 6vw, 40px); }
+  .foryou .lead{
+    margin-bottom: clamp(20px, 6vw, 36px);
+    text-align: center;
+  }
+  .foryou .lead-sub{
+    max-width: 100%;
+    margin: 0 auto clamp(24px, 6vw, 40px);
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .foryou .list{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 5vw, 32px);
+    margin-bottom: clamp(24px, 6vw, 40px);
+  }
+
+  .image-text-wrapper{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 360px;            /* SEでも読みやすい上限 */
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .image-text-wrapper > img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 文字は “縮む余地” を大きめに。折れ始めたら小さくなる */
+  .image-text-wrapper .q,
+  .image-text-wrapper .a{
+    position: absolute;
+    transform: translateX(-50%);
+    width: 72%;                  /* 幅を少し絞って折返しを減らす */
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(0,0,0,.18);
+    font-size: clamp(11px, 3.2vw, 15px); /* ↓最小値を下げた */
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  /* ===== item01（基準 415×520）===== */
+  .foryou .list .item:nth-child(1) .q {
+    top: 11.5%; left: 54%;
+    width: 44%;
+  }
+  .foryou .list .item:nth-child(1) .a {
+    bottom: 22%; left: 57%;
+    width: 74%;
+  }
+
+  /* ===== item02（基準 364×464）===== */
+  .foryou .list .item:nth-child(2) .q {
+    top: 13.5%; left: 50%;
+    width: 54%;
+  }
+  .foryou .list .item:nth-child(2) .a {
+    bottom: 13%; left: 50%;
+    width: 74%;
+  }
+
+  /* ===== item03（基準 368×601）===== */
+  .foryou .list .item:nth-child(3) .q {
+    top: 12%; left: 49%;
+    width: 56%;
+  }
+  .foryou .list .item:nth-child(3) .a {
+    bottom: 33%; left: 49.5%;
+    width: 76%;
+  }
+}
+
+
+ 
+ /* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー  */
+
+ /* *{
+  outline: 1px solid red;
+} */
+  

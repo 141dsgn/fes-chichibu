@@ -1,0 +1,425 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ーーーーーーーーーー
+    全ページ共通CSS
+ーーーーーーーーーー */
+
+
+ 
+/* ==========================================
+    　　　　　　
+　　　　　　　    　　PC
+
+========================================== */
+
+
+
+/* =====================
+        文字
+===================== */
+body{
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+p{
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 35px;
+}
+
+h1,h2,h3,h4{
+  font-weight: 700;
+  font-style:normal;
+}
+
+h1{
+  font-size: 64px;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 45px;
+
+}
+
+h3{
+  font-size: 24px;
+  line-height: 40px;
+}
+
+h4{
+  font-size: 18px;
+}
+
+
+
+
+
+/* =====================
+    共通レイアウト
+===================== */
+body{
+    background-color: #479663;
+    overflow-x: hidden;
+} 
+
+
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  /* margin-right: calc(50% - 50vw); */
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+/* =====================
+    共通の見た目
+===================== */
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a:link, a:visited { color: inherit; }
+
+
+
+/* =====================
+    　共通パーツ
+===================== */
+
+/* ボタン */
+
+.c-btn{
+  border-radius: 30px;
+  background-color: #F7943E;
+  color: #FFFDF6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  width: fit-content;
+  height: 54px;
+  padding: 0 30px;
+  box-shadow: 0px 4px 0px 0px  #FFFDF6;
+
+  text-decoration: none;
+}
+
+.c-btn:hover{
+  box-shadow:none;
+  transform: translateY(5px);
+}
+
+
+/* ------------------
+    下層ページヘッダー
+------------------ */
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%; /* ← 幅を100%にして左ロゴも含む */
+  display: flex; /* ← ロゴとハンバーガーを横並びに */
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 30px;
+
+}
+
+.header__logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 1100;
+}
+.header__logo img {
+  height: 80px;
+}
+
+/* ハンバーガーボタン */
+.header__toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FFFDF6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  /* border: 2px solid #273340; */
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.header__toggle-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #273340;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* ナビメニュー（半円） */
+.header__navi {
+  background-color: #F7943E;
+  color: #273340;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: -60vh;
+  width: 120vh;
+  height: 120vh;
+  border-radius: 50% 0 0 50%;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 縦中央揃え */
+  padding-top: 80px;
+  padding-left: 200px; /* 少し内側に寄せる */
+  padding-bottom: 100px;
+}
+
+.header__navi ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__navi li {
+  margin: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.header__navi a {
+  color: #FFFDF6;
+  text-decoration: none;
+  
+  font-size: 32px;
+  font-family: "Coming Soon", cursive;
+}
+
+/* メニューが開いた時 */
+.header.is-active .header__navi {
+  transform: translateX(0);
+}
+
+.header.is-active .header__navi li {
+  opacity: 1;
+  transform: translateY(0);
+}
+.header.is-active .header__navi li:nth-child(1) { transition-delay: 0.5s; }
+.header.is-active .header__navi li:nth-child(2) { transition-delay: 0.6s; }
+.header.is-active .header__navi li:nth-child(3) { transition-delay: 0.7s; }
+.header.is-active .header__navi li:nth-child(4) { transition-delay: 0.8s; }
+.header.is-active .header__navi li:nth-child(5) { transition-delay: 0.9s; }
+.header.is-active .header__navi li:nth-child(6) { transition-delay: 1.0s; }
+
+/* ハンバーガー開閉アニメーション */
+.header.is-active .header__toggle-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header.is-active .header__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.header.is-active .header__toggle-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  width: 100%;
+
+  background-color: #B7D7A8;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark img {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.c-footer .logomark:hover img,
+.c-footer .logomark:focus img {
+  animation: shake 0.4s ease;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.c-footer .logomark img{
+  max-width: 100%;
+}
+
+.c-footer .logotype{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+    height: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+  color: #273340;
+}
+
+
+.footer--darkgreen{
+  background-color: #479663;
+}
+
+
+
+
+
+/* ==========================================
+    　　　　　　
+　　　　　　　　　スマホ対応
+
+========================================== */
+
+
+@media screen and (max-width: 500px) {
+
+    /* =============== 
+        文字
+    =============== */
+
+p{
+  font-size: 15px;
+}
+
+
+h1{
+  font-size: 48px;
+}
+
+h2{
+  font-size: 24px;
+}
+
+h3{
+  font-size: 20px;
+}
+
+h4{
+  font-size: 16px;
+}
+
+
+
+  /* =============== 
+        共通パーツ
+    =============== */
+
+
+    /* フッター */
+.c-footer .logotype img{
+  padding-bottom: 40px;
+  max-width:  100%;
+  height: auto;
+  display: block; /* 画像下の余白を消す */
+  margin: 0 auto;
+  }
+
+.c-footer .logotype{
+  padding: 0 10px;
+  max-width:  100%;
+  height: auto;
+  display: block; /* 画像下の余白を消す */
+  margin: 0 auto;
+  }
+
+
+.c-footer .logomark{
+    /* padding: 0 10px; */
+  max-width:  100%;
+  height: auto;
+  display: block; /* 画像下の余白を消す */
+  margin: 0 auto;
+}
+
+
+/* ボタン */
+ .c-btn {
+    width: 100%;
+    max-width: 280px;
+    height: 48px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+
+
+  /* =============== 
+      共通レイアウト
+    =============== */
+
+/* img, video { 
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+.sp-column {
+  display: flex;
+  flex-direction: column; 
+  gap: 16px; 
+}
+
+
+
+
+}

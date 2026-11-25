@@ -1,0 +1,402 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ーーーーーーーーーー
+     contentページ
+ーーーーーーーーーー */
+#wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.market_title{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 185px;
+    padding-bottom: 50px;
+}
+.market_text{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: #FFFDF6;
+    padding-bottom: 50px;
+    padding: 20px;
+}
+.market_img{
+    width: 100%; 
+    height: auto; /* 縦横比を保つ */
+    display: block; /* 画像下の余白を消す */
+}
+
+/* フード */
+.food{
+
+  background-image: url(../img/food_haikei.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* 幅と高さに合わせて背景画像を拡大縮小 */
+  background-position: center center;
+  width: 100%; /* 画面幅いっぱい */
+  min-height: 600px; /* 必要に応じて調整 */
+  margin: 0 auto;
+  padding-bottom: 100px; /* 内容の余白 */
+}
+.food_title{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: #FFFDF6;
+    margin-bottom: 100px;
+    padding-top: 100px;
+}
+.food_1,.food_2,.food_3,.shop_1,.shop_2,.shop_3,.activity_1,.activity_2{
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    margin-bottom: 29px;
+}
+.pizza_text,.humburger_text,.curry_text,.sand_text,.jark_text,.monsterfood_text,.lemon_text,.kissa_text,.crape_text,.flower_text,.zakka_text,.candle_text,.zoo_text,.monstermaker_text,.magic_text,.taniku_text,.monstersukui_text,.shabon_text{
+  background-color: #FFFDF6;
+  border: 5px solid #96D07A;
+  border-radius: 30px;
+  width: 365px;
+  height: 230px;
+  padding: 20px;
+  margin-top: -20px;
+  z-index: 99;
+}
+.pizza1,.humburger1,.curry1,.sand1,.jark1,.monsterfood1,.lemon1,.kissa1,.crape1,.flower1,.zakka1,.candle1,.zoo1,.monstermaker1,.magic1,.taniku1,.monstersukui1,.shabon1{
+  text-align: center;
+  padding-bottom: 5px;
+}
+.pizza_img,.humburger_img,.curry_img,.sand_img,.jark_img,.monsterfood_img,.lemon_img,.kissa_img,.crape_img,.flower_img,.zakka_img,.candle_img,.zoo_img,.monstermaker_img,.magic_img,.taniku_img,.monstersukui_img,.shabon_img{
+padding-bottom: -50px;
+z-index: 100;
+}
+
+/* shop */
+.shop{
+  background-image: url(../img/shop_haikei.png);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain; /* 幅と高さに合わせて背景画像を拡大縮小 */
+  background-position: center center;
+  width: 100%; /* 画面幅いっぱい */
+  min-height: 600px; /* 必要に応じて調整 */
+  padding-bottom: 100px; /* 内容の余白 */
+}
+.shop_title{
+  width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: #FFFDF6;
+    margin-bottom: 80px;
+    margin-top: 200px;
+    padding-top: 100px;
+}
+/* activity */
+.activity{
+  background-image: url(../img/activity_haikei.png);
+  background-repeat: no-repeat;
+  background-size: contain;      /* ← 画像サイズそのまま */
+  background-position: center center;
+  margin: 0 auto;
+  width: 100%; /* 画面幅いっぱい */
+  min-height: 600px; /* 必要に応じて調整 */
+  padding-bottom: 100px;
+}
+.activity_title{
+    width: 1440px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: #FFFDF6;
+    padding-top: 150px;
+    margin-bottom: 80px;
+    margin-top: 150px;
+}
+.activity{
+   margin-bottom: 300px;
+}
+.mon{
+  display: none;
+}
+/* 画面いっぱいに */
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+/* フッター */
+.c-footer{
+  background-color: #B7D7A8;
+  margin: 0 auto;
+  text-align: center;
+ 
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+}
+
+.c-footer .logotype{
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+}
+/* ２カラムに並べ替え */
+.food_1,.food_2,.food_3,.shop_1,.activity_1,.activity_2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food_1 > div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+.food_2 > div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+.food_3 > div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+.shop_1 > div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+.activity_1> div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+.activity_2> div {
+  flex: 0 0 calc(33.333% - 20px);  /* 3カラム */
+  margin: 10px;
+}
+
+
+
+
+
+
+/*---------------------------------------------------
+-----------------------------------------------------
+ スマホ対応 
+----------------------------------------------------
+---------------------------------------------------*/
+img{max-width:100%;height:auto;}
+
+@media only screen and (max-width:500px){
+
+.food,.shop,.activity{
+  background-image: none;
+}
+#wrapper{
+    max-width: 100%;
+}
+.market_title{
+  width: 100%;
+  text-align: center;
+}
+.market_text{
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  padding: 30px;
+}
+.market_img{
+  margin-bottom: -30px;
+}
+
+
+
+
+/* 画像とテキストBOXの中央寄せ */
+.pizza_frame,.humburger,.curry{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;     
+}
+.sand,.jark,.monsterfood{
+  display: flex;
+  flex-direction: column; /* 上下に並べる場合 */
+  align-items: center;    /* 横方向の中央揃え */
+  text-align: center;     /* テキストも中央揃え */
+}
+.lemon,.kissa,.crape{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;     
+}
+.flower,.zakka,.candle{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
+}
+.zoo,.monstermaker,.magic{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
+}
+.taniku,.monstersukui,.shabon{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
+}
+
+
+
+
+/* フード */
+.food{
+  background-color: #96D07A;
+  background-size: cover;
+  background-position: center center;
+  min-height: 400px; /* 小さい画面向けに高さ調整 */
+  padding-bottom: 80px;
+  width: 100%; 
+}
+.food_title{
+  width: 100%;
+  text-align: center;
+}
+.food_1,.food_2,.food_3,.shop_1,.shop_2,.shop_3,.activity_1,.activity_2{
+    padding:0;
+    margin:0;
+    display: wrap;
+}
+/* ショップ */
+.shop{
+  margin: 0;
+  width: 100%;
+  padding-bottom: 80px;
+  min-height: 400px; /* 小さい画面向け調整 */
+  background-color: #479663;
+}
+.shop_title{
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin-top: 80px;
+  }
+/* アクティビティ */
+.activity{
+  background-color: #B7D7A8;
+  padding-bottom: 80px;
+  margin: 0;
+  min-height: 400px; /* 小さい画面向け調整 */
+  width: 100%;
+}
+.activity_title{
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin-top: 80px;
+  padding-top: 80px;
+  }
+.mon{
+  background-image: none;
+}
+.content_naminami img{
+  display: none;
+}
+
+
+
+
+/* テキスト */
+.pizza_text,.humburger_text,.curry_text,.sand_text,.jark_text,.monsterfood_text,.lemon_text,.kissa_text,.crape_text,.flower_text,.zakka_text,.candle_text,.zoo_text,.monstermaker_text,.magic_text,.taniku_text,.monstersukui_text,.shabon_text{
+  width: 220px;
+  height: 248px;
+}
+.pizza2,.humburger2,.curry2,.sand2,.jark2,.monsterfood2,.lemon2,.kissa2,.crape2,.flower2,.zakka2,.candle2,.zoo2,.monstermaker2,.magic2,.taniku2,.monstersukui2,.shabon2{
+    line-height: 170%;
+    font-size: 14px;
+}
+
+/* ２カラムに並べ替えスマホ  */
+@media (max-width: 500px) {
+  .food_1, .food_2, .food_3,
+  .shop_1, .shop_2, .shop_3 {
+    display: flex;
+    flex-wrap: wrap; /* これがないと2段に折り返さない */
+    justify-content: center; /* 中央寄せしたい場合 */
+  }
+
+  .food_1 > div,
+  .food_2 > div,
+  .food_3 > div,
+  .shop_1 > div,
+  .shop_2 > div,
+  .shop_3 > div {
+    flex: 0 0 calc(50% - 20px);
+    box-sizing: border-box; /* 余白を含めて幅計算 */
+    margin: 5px; /* 必要に応じて余白調整 */
+  }
+}
+
+
+
+/* フッター */
+.c-footer{
+  background-color: #479663;
+}
+ 
+
+
+
+}
+
+
+
+/* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+/* 
+*{
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 2px;
+  }
+    */

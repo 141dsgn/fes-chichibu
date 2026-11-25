@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    color:#FFFDF6;
+}
+
+ 
+/* ーーーーーーーーーー
+     newsページ
+ーーーーーーーーーー */
+ 
+#wrapper{
+  width:100%;
+  margin: 0 auto;
+}
+.p-news {
+  width: 100%;
+  margin: 0 auto;
+}
+.news .title{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-top: 185px;
+  padding-bottom: 129px;
+}
+
+.news_box{
+  display: flex;
+  margin-bottom: 300px;
+}
+/* 左コンテンツ */
+.news_left{
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-right: 15px;
+}
+.news1{
+  display: flex;
+  margin-top: 69px;
+  border-top: 1px dashed  #FFFDF6;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.news2{
+  display: flex;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.news3{
+  display: flex;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.news4{
+  display: flex;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.news5{
+  display: flex;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.news6{
+  display: flex;
+  border-bottom: 1px dashed #FFFDF6;
+  padding: 22px 0;
+}
+.left_column{
+  margin-right: 10px;
+}
+/* 右コンテンツ */
+.news_right{
+  width: 979px;
+  height: 978px;
+  padding-top: 73px;
+  padding-left: 85px;
+  margin-bottom: 200px;
+  background-image: url(../img/news_haikei.png);
+  background-repeat: no-repeat;
+  background-size: auto;      /* ← 画像サイズそのまま */
+  background-position: center; /* 中央に配置 */
+  margin: 0 auto;
+}
+
+.text{
+  color:#273340;
+  padding-left: 20px;
+}
+.light-text01{
+  margin-top: 24px ;
+  margin-bottom: 24px;
+}
+.light-text02{
+  font-size:24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.news_right .c-btn{
+  margin-left: 20px;
+  margin-top: 54px;
+}
+/* なみなみ */
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.full-width img {
+  width: 100%;
+  display: block;
+}
+
+/* ------------------
+      フッター
+------------------ */
+
+.c-footer{
+  background-color: #B7D7A8;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0 10px 0;
+}
+
+.c-footer .logomark{
+  padding-bottom: 5px;
+}
+
+.c-footer .logotype{
+  padding-bottom: 40px;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.icon img{
+  width: 38px;
+  margin-bottom: 10px;
+}
+
+.copy{
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer .privacy{
+  margin-bottom: 70px;
+}
+
+
+/* スマホ対応 */
+img{max-width:100%;height:auto;}
+
+@media only screen and (max-width:500px){
+#wrapper {
+    width: 100%;
+    background-image: none; /* 背景画像を消す */
+      }
+  .news .title{
+    width: 100%;
+    padding-top: 100px;
+  }
+.news_box{
+  display: flex;
+  margin-bottom: 100px;
+  }
+.news_right{
+  background-image: none;
+  background-color: #96D07A;
+  }
+.news_left {
+  margin: 0;
+  }
+.news1{
+  margin: 0;
+  }
+  /* .news_boxを縦並びに */
+  .news_box {
+    flex-direction: column-reverse; /* 縦並びの順番を逆に */
+  }
+  .text{
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+  .news_right .c-btn{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 左右のコンテンツを100%幅に */
+  .news_left,
+  .news_right {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .left_column{
+    margin-left: 30px;
+  }
+
+  
+
+
+  /* ボタンや画像も調整 */
+  .full-width {
+    width: 100%;
+  }
+  .full-width img {
+    width: 100%;
+  }
+  .news_right{
+    margin-bottom: 80px;
+    padding-top:100px ;
+  }
+ 
+  .news_naminami{
+    display: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+ 
+/* ーーーーーーーーーー
+    構造確認用
+ーーーーーーーーーー */
+/* 
+*{
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 2px;
+  }
+*/

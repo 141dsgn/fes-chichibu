@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>notice</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/notice.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+</script>
+
+<!-- レスポンシブ対応 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+<div id="wrapper">
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <!-- 左上ロゴ -->
+    <a href="../index.html" class="header__logo">
+      <img src="../img/c_header_logo.png" alt="フェスのロゴマーク">
+    </a>
+
+    <!-- ハンバーガー -->
+  <div class="header__toggle js-header_toggle" id="menuToggle">
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+    </div>
+
+    <!-- ナビメニュー -->
+    <nav class="header__navi">
+      <ul>
+        <li><a href="../news/index.html">news</a></li>
+        <li><a href="../content/index.html">content</a></li>
+        <li><a href="../artist/index.html">music</a></li>
+        <li><a href="../map/index.html">map</a></li>
+        <li><a href="../notice/index.html">notice</a></li>
+        <li><a href="../ticket/index.html">ticket</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <main class="p-notice">
+    <section class="notice">
+      <div class="notice_box">
+        <h1 class="notice_title">
+          <picture>
+            <source media="(max-width: 500px)" srcset="../img/notice48black.png">
+            <source media="(min-width: 501px)" srcset="../img/notice64black.png">
+            <img src="../img/notice64black.png" alt="ショップ">
+          </picture>
+        </h1>
+        <div class="notice_text">
+            <div class="notice_omoi"><p>音の森フェスティバルは「来てくれたみんなが楽しめること」をいちばん大切にしているフェスです。そして、小さな子どもたちがたくさん遊びに来てくれる場でもあります。<br><br>ステージ中に泣いちゃったり、遠路でちょっとぶつかっちゃったり。そんな場面もあるかもしれません。でもどうか温かく見守ってもらえたらうれしいです。<br><br>「コラ！迷惑かけてすみません...。」<br><br>小さい子を持つと、いつしか口に出すことが多くなるそんな言葉を言わなくてもいい空間に、みんなでしていきましょう。<br><br>もちろん、だからと言ってなにをやってもOKな、秩序のない空間を作りたいわけではありません。安全や快適さを守るためにガイドラインも下記にご用意していますので、来場前にぜひご確認ください。</p></div>
+        </div>
+        <div class="notice_mon"><img src="../img/notice_mon.png" alt="" width="" height=""></div>
+      </div>
+
+      <!-- よくある質問 -->
+        <div class="faq">
+          <h2 class="faq_title">よくある質問</h2>
+          <div class="faq_1">
+            <details class="qa-1">
+               <summary><img src="../img/faq_1.png" alt="雨天荒天時の開催について" width="705" height="83"></summary>
+               <p>・本イベントは雨天決行ですが、荒天や天災時はやむを得ず中止とさせていただくことがあります。当日の天候をご確認のうえ、レインコートをご持参ください。</p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_2.png" alt="チケット・入場についてのご案内" width="705" height="83"></summary>
+                <p>・入場券は1枚につきお一人様有効です。<br>・中学生以下のお子様は保護者同伴で無料でご入場いただけます。<br>・混雑時は安全のため入場制限をさせていただく場合がございます。<br>・駐車券をお持ちの方は指定の場所に駐車をお願いします。周辺道路や空き地への無断駐車はご遠慮ください。<br>・チケットの転売や個人間での譲渡は禁止いたします。発覚した場合は入場をお断りいたします。また、転売や個人間での譲渡で発生したトラブルについては、一切の責任を負いかねますのでご了承ください。<br>・ご入場時、電子チケットまたは紙チケットと引き換えにリストバンドをお渡しします。<br>・リストバンドを手首に装着している方のみ、入場および再入場が可能です。<br>・リストバンド交換時にトラブルが発生した場合、本人確認をさせていただく場合があります。同行者も含め、身分証（免許証、保険証など）のご準備をお願いいたします。<br>・リストバンドはご本人確認のための重要な証明となります。イベント期間中は絶対に外さず、破損や紛失にご注意ください。<br>・リストバンドの紛失や、一度外されたり破損したりした場合など、いかなる場合も再発行はいたしません。その場合、ご退場いただくことになりますので、お帰りになるまで大切に着用ください。<br>・不正入場が発覚した場合は警察に通報し、損害賠償を請求いたします。<br>
+                  </p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_3.png" alt="会場内での安全な過ごし方について" width="705" height="83"></summary>
+                <p>◯体調管理・安全面でのお願い<br>・体調が優れない場合は、無理をせずに近くのスタッフまでお気軽にお声かけください。楽しさよりも、安全を最優先でお願いいたします。<br>・お酒はほどほどに楽しみましょう。泥酔状態と判断された場合、安全のためご退場いただく場合がございます。<br>・飲酒運転は法律で禁止されています。運転される方には絶対にアルコールを勧めないようお願いいたします。<br>・会場内外での事故・盗難・トラブルに関して、主催者は責任を負いかねますので、十分にご注意ください。<br><br>◯安全のために禁止されていること<br>他のお客様や近隣の方々が安全に、快適にお過ごしいただくために、以下の行為は禁止です。<br>・モッシュ、ダイブなど危険な行為<br>・ステージ観覧の際の傘・日傘のご使用（他の場所でも混雑時にはご使用をご遠慮いただく場合がございます）<br>・指定エリア以外でのテント、タープ、パラソルなどの設置<br>・荷物・イス・シート・ベビーカーの放置<br>・キャンプエリアへの無断立ち入り<br>・花火、キャンプファイヤー、焚き火などの火気使用<br>・植物の採取や動物への危害を与える行為<br>・法律で禁止されている物品の持ち込み<br>・フラッシュ撮影、録音、撮影禁止の出演者の撮影<br>・会場内外での迷惑行為や近隣へのご迷惑となる行動<br>
+                </p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_4.png" alt="写真撮影について" width="705" height="83"></summary>
+                <p>・撮影可能な出演者であっても、撮影はスマートフォンのみでお願いいたします。一眼レフやビデオカメラ、三脚の使用は他のお客様のご迷惑になるためお控えください。</p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_5.png" alt="会場内の飲食について" width="705" height="83"></summary>
+                <p>・会場内への飲食物の持ち込みは原則禁止しておりますが、水、お茶、フタ付きボトルに入れた飲料、お子様向けの食べ物はお持ち込み可能です。<br>・ビン類、缶類、アルコール類の持ち込みは、安全のため禁止です。<br>・食品はご購入後、おいしいうちに食べきっていただき、食べ残しのないようご協力をお願いいたします。<br>
+                </p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_6.png" alt="ゴミの分別と処理についてのお願い" width="705" height="83"></summary>
+                <p>・ゴミは会場内の指定ゴミ箱までお持ちください。ゴミ箱がいっぱいの場合は、スタッフにお知らせいただければ迅速に対応いたします。</p>
+            </details>
+            <details class="qa-1">
+                <summary><img src="../img/faq_7.png" alt="喫煙についてのお願い" width="705" height="83"></summary>
+                <p>・会場内は指定の喫煙場所以外、禁煙となります。お子様も多く来場されますのでご理解・ご協力をお願いいたします。</p>
+            </details>
+          </div>
+        </div>
+
+    </section>
+
+    <section id="p-content">
+      <h1 class="contact_title">
+        <picture>
+          <source media="(max-width: 500px)" srcset="../img/contact48black.png">
+          <source media="(min-width: 501px)" srcset="../img/contact64black.png">
+          <img src="../img/contact64black.png" alt="ショップ">
+        </picture>
+      </h1>
+      <div class="contact_text"><p>ご質問/ご要望/ご提案は下記お問い合わせフォームからご連絡ください。なおすべてのお問い合わせにはお返事できかねること、内容によってはご返信までにお時間をいただく場合があることがございます。予めご了承ください。</p></div>
+      
+      <!-- 問い合わせフォーム -->
+      <div class="form_box">
+          <div class="form">
+            <div class="form-item">
+              <p class="form-item-label"><span class="form-item-label-required">必須</span>氏名</p>
+              <input type="text" class="form-item-input" placeholder="例）音山森子">
+            </div>
+            <div class="form-item">
+              <p class="form-item-label"><span class="form-item-label-required">必須</span>電話番号</p>
+              <input type="text" class="form-item-input" placeholder="例）000-0000-0000">
+            </div>
+            <div class="form-item">
+              <p class="form-item-label"><span class="form-item-label-required">必須</span>メールアドレス</p>
+              <input type="email" class="form-item-input" placeholder="例）example@gmail.com">
+            </div>
+            <div class="form-item">
+              <p class="form-item-label ismsg"><span class="form-item-label-required">必須</span>お問い合わせ内容</p>
+              <textarea class="form-item-textarea"></textarea>
+            </div>
+            <!-- 送信ボタン -->
+            <a href="#" class="c-btn"><h4>　　　　　送　信　　　　　</h4></a>
+          </div>
+        </div>
+    
+    </section>
+
+      <!-- なみなみとモンスター -->
+      <div class="notice_naminami container full-width">
+        <img src="../img/notice_naminami.png" alt="" width="" height="">
+      </div>
+
+
+      <!-- フッター -->
+        <!-- フッター -->
+    <footer class="c-footer">
+      <div class="logomark"><a href="../index.html"><img src="../img/c_header_logo.png" alt="音という漢字に目玉が二つついているロゴマーク"></a></div>
+      <div class="logotype"><img src="../img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ　秩父音の森フェスティバル"></div>
+      <div class="sns">
+        <a href="#" class="icon">
+          <img src="../img/c-footer_icon_x.png" alt="エックスのアイコン">
+        </a>
+        <a href="#" class="icon">
+          <img src="../img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+        </a>
+        <a href="#" class="icon">
+          <img src="../img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+        </a>
+      </div>
+      <div class="privacy"><a href="../privacy/index.html">プライバシーポリシー</a></div>
+      <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+    </footer>
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

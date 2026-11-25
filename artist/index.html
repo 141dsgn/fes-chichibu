@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>artist</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/artist.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  $(function(){
+    $('.js-header_toggle, #menuToggle').on('click', function(){
+      $('.header').toggleClass('is-active');
+    });
+
+    $('.header__navi a').on('click', function(){
+      $('.header').removeClass('is-active');
+    });
+  });
+
+$(function(){
+  var open = $('.modal-open'),
+      close = $('.modal-close'),
+      container = $('.modal-container');
+
+  open.on('click', function(){ 
+    container.addClass('active');
+    $('body').addClass('modal-opened');   // ← 追加：ヘッダー非表示＆スクロール禁止
+    return false;
+  });
+
+  close.on('click', function(){  
+    container.removeClass('active');
+    $('body').removeClass('modal-opened'); // ← 追加
+  });
+
+  // モーダル外クリックで閉じる
+  $(document).on('click', function(e) {
+    if(!$(e.target).closest('.modal-body').length) {
+      container.removeClass('active');
+      $('body').removeClass('modal-opened'); // ← 追加
+    }
+  });
+
+  // 内側クリックはバブリング停止（誤閉じ防止の保険）
+  $('.modal-body').on('click', function(e){
+    e.stopPropagation();
+  });
+});
+
+
+
+</script>
+
+</head>
+
+<body class="p-artist">
+
+<!-- ヘッダー -->
+<header class="header">
+  <!-- 左上ロゴ -->
+  <a href="../index.html" class="header__logo">
+    <img src="../img/c_header_logo.png" alt="フェスのロゴマーク">
+  </a>
+
+  <!-- ハンバーガー -->
+<div class="header__toggle js-header_toggle" id="menuToggle">
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+    <span class="header__toggle-line"></span>
+  </div>
+
+  <!-- ナビメニュー -->
+  <nav class="header__navi">
+    <ul>
+      <li><a href="../news/index.html">news</a></li>
+      <li><a href="../content/index.html">content</a></li>
+      <li><a href="index.html">music</a></li>
+      <li><a href="../map/index.html">map</a></li>
+      <li><a href="../notice/index.html">notice</a></li>
+      <li><a href="../ticket/index.html">ticket</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- modal -->
+<div class="modal-container">
+  <div class="modal-body">
+    <button class="modal-close" type="button" aria-label="閉じる">
+      <span class="modal-close-line"></span>
+      <span class="modal-close-line"></span>
+    </button>
+    <div class="modal-content">
+      <div class="modal-text">
+        <h2>The Blue Horizon</h2>
+        <p class="profile">大学生時代に集まった5人で始めたバンド。<br>複数の自主制作音源を制作した後は、インディレーベルIROIRORHYTHMより1st album「figma (2017)」、2nd album 「html(2020)」を発表。<br>2021年cssの2nd’’websitedukuri’’に作曲で参加。またvo.AAAは『海とカモメ(feat. onigiri)』にもボーカルで参加している。他にも参加楽曲多数。最新作は2022年<br>7’single’’display:flex;’’。Gt.ishiiは音楽活動の他、ミュージシャンの写真撮影やデザイン、映像作品の美術監督等の制作活動も行う。<p>
+        <p>SNS : <span><a href="#">http://www.xxxxxxxxxxxxxxxxxx.com/</a></span></p>
+      </div>
+      <div class="modal-image">
+        <img src="../img/p-top-artist01-modal.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <main class="p-artist-main">
+
+
+    <!-- ラインナップ一覧（トップと同内容を流用） -->
+    <section class="lineup">
+        <img src="../img/p-top-lineup-monster-mini01.png" alt="" class="monster-mini01"><img src="../img/p-top-lineup-monster-mini02.png" alt="" class="monster-mini02"><img src="../img/p-top-lineup-monster-mini03.png" alt="" class="monster-mini03"><img src="../img/p-top-lineup-monster-mini04.png" alt="" class="monster-mini04">
+
+
+
+<div class="title">
+        <img src="../img/artist64black.png" alt="LINEUP">
+      </div>
+      <div class="artist">
+        <!-- アーティストリスト -->
+        <div class="artist-list line01 sp-column">
+          <div class="item modal-open">
+            <div class="photo">
+              <img src="../img/artist01.png" alt="The Blue Horizon">
+            </div>
+            <h3 class="name">The Blue Horizon</h3>
+          </div>
+          <div class="item modal-open">
+            <div class="photo">
+              <img src="../img/artist02.png" alt="安藤ももか">
+            </div>
+            <h3 class="name">安藤ももか</h3>
+          </div>
+          <div class="item modal-open">
+            <div class="photo">
+              <img src="../img/artist03.png" alt="RAKOTA">
+            </div>
+            <h3 class="name">RAKOTA</h3>
+          </div>
+        </div>
+        <div class="artist-list line02 sp-column">
+          <div class="item">
+            <a href="http://lemon401.stars.ne.jp/"><div class="photo">
+              <img src="../img/artist04.png" alt="PICOPICOぱぺっと">
+            </div></a>
+            <h3 class="name">PICOPICOぱぺっと</h3>
+          </div>
+          <div class="item">
+            <div class="photo">
+              <img src="../img/artist05.png" alt="the folk society">
+            </div>
+            <h3 class="name">the folk society</h3>
+          </div>
+          <div class="item">
+            <div class="photo">
+              <img src="../img/artist06.png" alt="HÖNÖKA">
+            </div>
+            <h3 class="name">HÖNÖKA</h3>
+          </div>
+        </div>
+
+        <div class="artist-list line03 sp-column">
+          <div class="item">
+            <div class="photo">
+              <img src="../img/artist07.png" alt="ハナレヤマ">
+            </div>
+            <h3 class="name">ハナレヤマ</h3>
+          </div>
+          <div class="item">
+            <div class="photo">
+              <img src="../img/artist08.png" alt="さのなこ">
+            </div>
+            <h3 class="name">さのなこ</h3>
+          </div>
+          <div class="item">
+            <div class="photo">
+              <img src="../img/artist09.png" alt="石井隆一郎">
+            </div>
+            <h3 class="name">石井隆一郎</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- タイムテーブル -->
+    <section class="timetable" id="timetable">
+      <div class="title">
+        <img src="../img/p-artist-timetable64black.png" alt="タイムテーブル">
+      </div>
+<div class="bgcontainer full-width">
+      <img class="bg" src="../img/p-artist-tt-bg.png" alt="">
+
+      <img class="tt" src="../img/p-artist-timetable.png" alt="">
+      </div>
+    </section>
+  </main>
+
+
+
+
+  <!-- フッター -->
+  <footer class="c-footer footer--darkgreen">
+    <div class="footer__logo-wrap">
+      <div class="logomark">
+        <a href="../index.html">
+          <img src="../img/c_header_logo.png" alt="ロゴマーク">
+        </a>
+      </div>
+      <div class="logotype">
+        <img src="../img/c-footer_logotype.png" alt="フェスタイトルのロゴタイプ">
+      </div>
+    </div>
+    <div class="sns">
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_x.png" alt="エックスのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_ig.png" alt="インスタグラムのアイコン">
+      </a>
+      <a href="#" class="icon">
+        <img src="../img/c-footer_icon_fb.png" alt="フェイスブックのアイコン">
+      </a>
+    </div>
+    <div class="privacy"><a href="../privacy/index.html">プライバシーポリシー</a></div>
+    <div class="copy"><p>&copy; 2025 秩父音の森フェスティバル</p></div>
+  </footer>
+
+</body>
+</html>
